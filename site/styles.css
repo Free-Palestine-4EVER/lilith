@@ -739,3 +739,8 @@ body.scrolled #mast .mh-mark,body.scrolled #mast .mh-menu,body.scrolled #mast .m
 /* v30 — gemstone descriptions */
 .stone-row .stone p:last-child{color:var(--muted);font-size:13px;line-height:1.6;max-width:30ch}
 @media(min-width:721px){.stone-row .stone p:last-child{margin-top:4px}}
+
+/* v31 — universal scroll-reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--e2),transform 1s var(--e2);transition-delay:var(--rvd,0s)}
+.rv-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}

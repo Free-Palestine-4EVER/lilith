@@ -26,9 +26,9 @@
 <link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="fonts/supreme-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="fonts.css?v=20" />
-<link rel="stylesheet" href="styles.css?v=30" />
+<link rel="stylesheet" href="styles.css?v=31" />
 <link rel="stylesheet" href="config.css?v=20" />
-<link rel="stylesheet" href="preorder.css?v=24" />
+<link rel="stylesheet" href="preorder.css?v=33" />
 <link rel="stylesheet" href="checkout.css?v=20" />
 </head>
 <body class="loading">
@@ -63,7 +63,7 @@
     <div class="mh-mark">LILITH</div>
     <div class="mh-utils">
       <button id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
-      <button aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+      <button id="accountBtn" aria-label="Account &amp; order tracking"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
       <button data-buy="gold" aria-label="Reservations"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></button>
       <span class="mh-region">United States · USD</span>
       <a class="mh-pre" data-buy="gold" href="#buy">Preorder</a>
@@ -458,9 +458,37 @@
           <h3 id="poDoneTitle">Your Yellow Gold Serpent</h3>
           <p class="po-done-no">Reservation <b id="poNo">LIL-0000</b></p>
           <p class="po-done-note">Thank you, <b id="poDoneName">—</b>. An advisor will reach out to <b id="poDoneEmail">you</b> within 24 hours to confirm your size and begin the casting.</p>
+          <div class="po-account" id="poAccount">
+            <p class="po-acc-h">Track your order</p>
+            <p class="po-acc-sub">Set a password to follow it from design to delivery — invoiced, designing, designed, shipped, arrived.</p>
+            <input type="password" id="poPass" placeholder="Choose a password (6+ characters)" autocomplete="new-password" />
+            <button class="po-acc-btn" id="poAccBtn">Create account &amp; track</button>
+            <p class="po-acc-msg" id="poAccMsg"></p>
+            <button class="link-quiet po-track-open" id="poTrackOpen" style="display:none">View my order &#8594;</button>
+          </div>
           <button class="po-done-btn" id="poDoneClose">Close</button>
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- ============ ORDER TRACKING ============ -->
+  <div id="track" aria-hidden="true">
+    <div class="track-shell">
+      <button class="po-close" id="trackClose" aria-label="Close">&times;</button>
+      <div class="track-inner">
+        <p class="po-step">Maison Lilith</p>
+        <h3 id="trackTitle">Track your order</h3>
+        <form id="trackLogin" class="track-login" novalidate>
+          <p class="track-sub">Sign in with the email and password from your reservation.</p>
+          <label class="po-field"><span>Email</span><input type="email" id="tkEmail" autocomplete="email" /></label>
+          <label class="po-field"><span>Password</span><input type="password" id="tkPass" autocomplete="current-password" /></label>
+          <p class="po-err" id="tkErr" role="alert"></p>
+          <button type="submit" class="po-submit" id="tkBtn"><span class="po-submit-tx">Sign in</span><span class="po-spin"></span></button>
+        </form>
+        <div id="trackOrders" class="track-orders"></div>
+        <button class="link-quiet" id="trackLogout" style="display:none">Sign out</button>
+      </div>
     </div>
   </div>
 
@@ -549,16 +577,22 @@
   </div>
 
   <script src="vendor/lenis.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  <script src="firebase-init.js?v=33"></script>
   <script src="home.js?v=20"></script>
   <script src="configurator.js?v=24"></script>
-  <script src="preorder.js?v=30"></script>
+  <script src="preorder.js?v=33"></script>
   <script src="checkout.js?v=20"></script>
   <script src="menu.js?v=28"></script>
   <script src="fx.js?v=20"></script>
   <script src="award.js?v=20"></script>
+  <script src="reveal.js?v=32"></script>
   <script src="vid.js?v=25"></script>
   <script src="collbg.js?v=25"></script>
   <script src="scrubfilm.js?v=30"></script>
   <script src="earcuff.js?v=29"></script>
+  <script src="account.js?v=33"></script>
 </body>
 </html>

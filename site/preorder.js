@@ -62,6 +62,13 @@
     $('poDoneTitle').textContent = 'Your ' + current.title;
     $('poDoneName').textContent = first;
     $('poDoneEmail').textContent = email;
+    // hand the order to account.js for the "create account & track" step
+    window.LILITH_lastOrder = {
+      orderNo: order, email,
+      name: [first, $('poLast').value.trim()].filter(Boolean).join(' '),
+      product: current.title, summary: current.summary,
+      price: 'from ' + (current.priceText || ('$' + current.price))
+    };
     po.classList.add('done');
   }
   $('poDoneClose').addEventListener('click', ()=> close(true));

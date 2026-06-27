@@ -76,3 +76,84 @@
 .po-done-btn:hover{background:var(--blood);border-color:var(--blood)}
 
 @media(max-width:520px){.po-row2{grid-template-columns:1fr}}
+
+/* ============================================================
+   v32 — WHITE preorder form (matches the ivory theme)
+   ============================================================ */
+#preorder{background:var(--ink);color:var(--text)}
+.po-visual-grad{background:linear-gradient(180deg,rgba(20,12,8,.15),transparent 34%,rgba(20,12,8,.35) 64%,rgba(20,12,8,.86))}
+.po-form-wrap{background:#fff}
+.po-close{border-color:#e2dcd4;color:#7a6f64}
+.po-close:hover{background:var(--blood);border-color:var(--blood);color:#fff}
+.po-step{color:var(--blood-2)}
+#poForm>h3{color:var(--text)}
+.po-field>span{color:var(--muted)}
+.po-field input,.po-field select{color:var(--text);border-bottom-color:#e2dcd4}
+.po-field input::placeholder{color:#b3a99d}
+.po-field input:focus,.po-field select:focus{border-bottom-color:var(--blood);box-shadow:0 1px 0 var(--blood)}
+.po-field select option{background:#fff;color:var(--text)}
+.po-fine{color:var(--muted)}
+.po-fine b{color:var(--text)}
+/* success (white) */
+.po-done{background:#fff;color:var(--text)}
+.po-done h3{color:var(--text)}
+.po-done-no{color:var(--muted)} .po-done-no b{color:var(--text)}
+.po-done-note{color:var(--muted)} .po-done-note b{color:var(--text)}
+.po-done-btn{color:var(--text);border-color:#e2dcd4}
+.po-done-btn:hover{background:var(--blood);border-color:var(--blood);color:#fff}
+
+/* ============================================================
+   v33 — post-reserve account step + order tracking
+   ============================================================ */
+.po-account{margin-top:8px;width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:12px;
+  border-top:1px solid #ece5df;padding-top:24px}
+.po-acc-h{font-family:var(--display);font-size:22px;color:var(--text)}
+.po-acc-sub{color:var(--muted);font-size:12.5px;line-height:1.6;max-width:36ch}
+#poPass{width:100%;background:#fff;border:1px solid #e2dcd4;border-radius:8px;padding:13px 14px;font-family:var(--text-font);font-size:15px;color:var(--text);outline:none;transition:border-color .25s,box-shadow .25s}
+#poPass:focus{border-color:var(--blood);box-shadow:0 0 0 3px color-mix(in oklab,var(--blood) 22%,transparent)}
+.po-acc-btn{width:100%;background:var(--blood);color:#fff;border:none;border-radius:8px;padding:14px;cursor:pointer;
+  font-family:var(--text-font);font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s,transform .3s var(--e2)}
+.po-acc-btn:hover{background:var(--blood-2);transform:translateY(-1px)}
+.po-acc-btn:disabled{opacity:.7;cursor:default}
+.po-acc-msg{font-size:13px;color:var(--muted);min-height:1px}.po-acc-msg b{color:var(--blood-2)}
+.po-track-open{margin-top:2px}
+
+/* TRACK modal */
+#track{position:fixed;inset:0;z-index:140;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;
+  background:var(--ink);opacity:0;visibility:hidden;transform:translateY(1.5%);
+  transition:opacity .5s var(--e2),transform .55s var(--e2),visibility .5s;font-family:var(--text-font);color:var(--text)}
+#track.open{opacity:1;visibility:visible;transform:none}
+.track-shell{position:relative;width:100%;max-width:620px;min-height:100%;padding:clamp(70px,12vh,120px) clamp(24px,6vw,56px) 60px}
+#track .po-close{border-color:#e2dcd4;color:#7a6f64}
+#track .po-close:hover{background:var(--blood);border-color:var(--blood);color:#fff}
+.track-inner .po-step{color:var(--blood-2)}
+#trackTitle{font-family:var(--display);font-weight:500;font-size:clamp(30px,5vw,52px);line-height:1;color:var(--text);margin:8px 0 26px}
+.track-sub{color:var(--muted);font-size:13.5px;margin-bottom:20px;line-height:1.6}
+.track-login{display:flex;flex-direction:column;gap:18px;max-width:380px}
+.track-login .po-field>span{color:var(--muted)}
+.track-login .po-field input{background:#fff;border:1px solid #e2dcd4;border-radius:8px;border-bottom:1px solid #e2dcd4;color:var(--text);padding:12px 13px}
+.track-login .po-field input:focus{border-color:var(--blood);box-shadow:0 0 0 3px color-mix(in oklab,var(--blood) 20%,transparent)}
+.track-msg{color:var(--muted);font-size:14px;padding:10px 0}.track-msg.err{color:#c2334a}
+.track-logout, #trackLogout{margin-top:24px;display:inline-flex}
+
+/* order card + status timeline */
+.track-order{border:1px solid var(--line);border-radius:12px;padding:24px 22px;margin-bottom:18px;background:#fff}
+.to-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.to-head h4{font-family:var(--display);font-weight:500;font-size:22px;color:var(--text)}
+.to-no{font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.to-sum{color:var(--muted);font-size:13px;margin-top:4px}
+.timeline{list-style:none;display:flex;justify-content:space-between;margin-top:26px;position:relative}
+.timeline::before{content:"";position:absolute;top:7px;left:7px;right:7px;height:1px;background:var(--line)}
+.tl-step{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;flex:1;text-align:center;z-index:1}
+.tl-dot{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--line-2);background:#fff;transition:.3s}
+.tl-step.done .tl-dot{background:var(--blood);border-color:var(--blood)}
+.tl-step.current .tl-dot{box-shadow:0 0 0 4px color-mix(in oklab,var(--blood) 22%,transparent)}
+.tl-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);max-width:8ch}
+.tl-step.done .tl-label{color:var(--text)}
+.tl-step.current .tl-label{color:var(--blood-2);font-weight:600}
+@media(max-width:560px){
+  .timeline{flex-direction:column;align-items:flex-start;gap:18px}
+  .timeline::before{top:7px;bottom:7px;left:7px;right:auto;width:1px;height:auto}
+  .tl-step{flex-direction:row;gap:14px;text-align:left}
+  .tl-label{max-width:none;font-size:11px}
+}
