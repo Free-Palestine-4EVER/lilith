@@ -1,0 +1,191 @@
+============================================================
+LILITH — SERPENT FINE JEWELLERY · IMAGE PROMPTS (15)
+For Nano Banana / image gen. Goal: model-worn + macro shots,
+all 3 metals, ring facing camera + facing away, to fill the
+site with real jewelry-house imagery.
+============================================================
+
+--- STYLE LOCK (paste at the top of EVERY prompt, or attach your
+    reference ring photo so the design stays identical) ---
+Photorealistic luxury jewelry campaign photograph. The piece is a
+COILED SERPENT RING: a hammered, faceted/textured metal snake that
+wraps the finger about two and a half times, its head rising up with
+a sleek faceted skull, a tapered tail, and tiny cabochon gemstone
+eyes. Keep this EXACT ring design in every image — only the metal
+and eye-stone change. Natural female hand, neat bare nails, relaxed
+elegant pose, real skin texture, soft daylight, shallow depth of
+field, gentle film grain, 8k, no text, no logos, no watermark.
+
+METAL / EYE / MOOD KEY:
+• YELLOW GOLD  — ruby (deep red) eyes  — warm champagne / honey background
+• ROSE GOLD    — black onyx eyes       — soft blush-pink background
+• PLATINUM     — emerald (green) eyes  — cool pale grey-blue / icy background
+
+============================================================
+A · ON-HAND, RING FACING THE CAMERA (hero shots)
+============================================================
+
+1) YELLOW GOLD — hero on hand, facing camera
+[STYLE LOCK] Yellow gold serpent ring with ruby eyes, worn on the
+middle finger of a softly lit female hand held up toward the camera,
+the serpent's head facing the lens and rising. Warm champagne-cream
+blurred background, golden hour light, hand relaxed and graceful,
+macro 100mm look, ring tack-sharp, background melting to bokeh.
+
+2) ROSE GOLD — hero on hand, facing camera
+[STYLE LOCK] Rose gold serpent ring with black onyx eyes, worn on the
+middle finger, hand resting elegantly over the other hand, serpent
+head facing the camera. Soft blush-pink background, diffused daylight,
+delicate and sensual, shallow depth of field. (Match the reference
+photo's framing and mood exactly.)
+
+3) PLATINUM — hero on hand, facing camera
+[STYLE LOCK] Platinum serpent ring with emerald eyes, worn on the
+index finger of a poised hand lifted toward the lens, serpent head
+facing the camera. Cool pale grey-blue background, crisp silvery
+daylight, clean and icy-luxurious, ring razor-sharp.
+
+============================================================
+B · ON-HAND, RING / COILS FACING AWAY (back view)
+============================================================
+
+4) YELLOW GOLD — back of the wrap
+[STYLE LOCK] Yellow gold serpent ring with ruby eyes seen from BEHIND
+— the camera looks at the back of the coils and the tapered tail as
+the head turns away over the knuckle. Hand gently curled, warm honey
+background, soft rim light catching the hammered facets.
+
+5) ROSE GOLD — back of the wrap
+[STYLE LOCK] Rose gold serpent ring with onyx eyes photographed from
+the back of the hand, the spiraling coils and tail toward the camera,
+head curving away down the finger. Blush-pink background, tender
+overcast light, intimate close framing.
+
+6) PLATINUM — back of the wrap
+[STYLE LOCK] Platinum serpent ring with emerald eyes from behind, the
+faceted coils and pointed tail facing the lens, head disappearing
+around the finger. Icy grey-blue background, bright clean light,
+high-jewellery catalogue feel.
+
+============================================================
+C · MACRO DETAIL (head, eyes, scales)
+============================================================
+
+7) MACRO — serpent head & gem eyes (rose gold)
+[STYLE LOCK] Extreme macro of the rose gold serpent's head on a
+fingertip, filling the frame: faceted skull, hammered scales, and the
+glossy black onyx cabochon eyes catching a pinpoint of light. Blush
+background, dreamy bokeh, museum-macro sharpness on the eyes.
+
+8) MACRO — coils & hammered texture (yellow gold)
+[STYLE LOCK] Tight macro of the yellow gold serpent's coiled body
+wrapping the finger, showcasing the hand-hammered, faceted metal
+texture and the warm reflections rolling across it. Honey background,
+soft directional light raking the surface.
+
+============================================================
+D · THE OPEN MOUTH (cigarette-holder signature)
+============================================================
+
+9) OPEN MOUTH — worn, agape jaw (yellow gold)
+[STYLE LOCK] Yellow gold serpent ring with ruby eyes and its mouth
+OPEN (agape jaw, a working cigarette holder), worn on an elegant hand
+near the model's lips as if about to hold a thin cigarette. Warm
+champagne background, sultry low light, editorial and defiant, smoke
+haze optional, ring sharp.
+
+============================================================
+E · EDITORIAL / SENSUAL
+============================================================
+
+10) NEAR-FACE editorial (platinum)
+[STYLE LOCK] Platinum serpent ring with emerald eyes, worn on a hand
+brought up beside a woman's jaw / collarbone, soft focus on her skin,
+ring in crisp focus. Cool neutral background, cinematic side light,
+quiet luxury, sensual restraint, vertical 4:5 crop.
+
+11) TWO HANDS clasped (rose gold)
+[STYLE LOCK] Rose gold serpent ring with onyx eyes worn on one hand,
+both hands softly clasped/overlapping in the lower frame, serpent
+head visible and rising. Blush background, gentle morning light,
+tender and elegant, generous negative space above for text.
+
+============================================================
+F · STILL LIFE / PRODUCT (no hand)
+============================================================
+
+12) FLAT-LAY on silk (rose gold)
+[STYLE LOCK] Rose gold serpent ring resting on softly draped blush
+silk, shot from above, coils open and head rising off the fabric,
+onyx eyes glinting. Soft window light, delicate shadows, refined
+flat-lay, lots of clean silk around it for layout space.
+
+13) STUDIO PEDESTAL (platinum)
+[STYLE LOCK] Platinum serpent ring with emerald eyes standing on a
+small pale stone pedestal in a seamless studio, three-quarter view,
+dramatic single soft key light, deep clean shadow, high-jewellery
+product photography, icy grey-blue seamless background.
+
+14) TRIO — all three metals together
+[STYLE LOCK] All three serpent rings together — yellow gold (ruby),
+rose gold (onyx), platinum (emerald) — arranged in a graceful row /
+gentle overlap on a smooth neutral taupe surface, heads rising,
+soft even studio light, family portrait of the collection, each ring
+sharp, plenty of space around them.
+
+============================================================
+G · MOODY / DARK (for the dark sections)
+============================================================
+
+15) MOODY low-key on hand (yellow gold)
+[STYLE LOCK] Yellow gold serpent ring with ruby eyes worn on a hand
+emerging from shadow against a near-black background, a single warm
+beam lighting the serpent's head and the ruby eyes, dramatic chiaro-
+scuro, smoke and grain, cinematic and exclusive, vertical crop.
+
+============================================================
+TIPS
+• Attach your reference ring photo to each generation so the ring
+  design stays identical — change ONLY the metal + eye stone + bg.
+• Generate at the highest resolution; portrait 4:5 or 3:4 for the
+  on-hand shots, square for macros/flat-lay.
+• Save them as:  worn-gold-1.jpg, worn-rose-1.jpg, worn-plat-1.jpg,
+  macro-head.jpg, open-worn.jpg, trio.jpg … and drop them in
+  ~/dev/snake-ring/site/img/  — I'll wire them into the site.
+============================================================
+
+
+============================================================
+REFERENCE-BASED METAL SWAP  (attach your pink/rose-gold model
+photo, get the SAME shot in gold & platinum)
+============================================================
+
+>> YELLOW GOLD (attach the rose-gold model photo):
+Using the attached photograph of a hand wearing a rose-gold serpent ring,
+recreate the IDENTICAL image — same model, same hand and finger, same pose,
+same soft background, same lighting, framing and depth of field, and the EXACT
+same coiled hammered serpent ring design — but change ONLY the ring's metal to
+warm 18k YELLOW GOLD and the snake's two eyes to tiny deep-red RUBY cabochons.
+Give the metal warm golden reflections consistent with yellow gold; warm the
+background very slightly toward champagne. Everything else identical.
+Photorealistic luxury jewelry campaign, 8k, sharp on the ring, no text, no logo.
+
+>> PLATINUM (attach the rose-gold model photo):
+Using the attached photograph of a hand wearing a rose-gold serpent ring,
+recreate the IDENTICAL image — same model, same hand and finger, same pose,
+same lighting, framing and depth of field, and the EXACT same coiled hammered
+serpent ring design — but change ONLY the ring's metal to bright silvery
+PLATINUM (cool white precious metal) and the snake's two eyes to tiny
+EMERALD-green cabochons. Give the metal cool silver reflections; cool the
+background slightly toward soft pale grey-blue. Everything else identical.
+Photorealistic luxury jewelry campaign, 8k, sharp on the ring, no text, no logo.
+
+>> ROSE GOLD: keep your reference as-is (or upscale). Onyx-black eyes.
+
+LOCK THE COLOR: if a swap drifts, attach BOTH the model photo AND a product
+render of the target metal (img/config/gold-eyes.webp or platinum-eyes.webp)
+and add: "match the ring's metal and eye stones to the second attached image."
+
+FRONT vs BACK: attach a front-facing or back-of-hand reference and reuse the
+same template — it copies whatever pose you give it.
+Save as: worn-gold-1.jpg / worn-rose-1.jpg / worn-plat-1.jpg in site/img/

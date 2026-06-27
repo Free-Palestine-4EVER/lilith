@@ -1,0 +1,6 @@
+/* LILITH — self-hosted type · Melodrama (display) + Supreme (text) */
+@font-face{font-family:'Melodrama';src:url('fonts/melodrama-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Melodrama';src:url('fonts/melodrama-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Melodrama';src:url('fonts/melodrama-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Supreme';src:url('fonts/supreme-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Supreme';src:url('fonts/supreme-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}

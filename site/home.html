@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1a0d0c" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="LILITH" />
+<title>LILITH — The Maison</title>
+<meta name="description" content="LILITH — handmade serpent fine jewellery. Each piece cast in solid gold and platinum and finished by a single hand. No two are alike." />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/supreme-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="fonts.css?v=20" />
+<link rel="stylesheet" href="styles.css?v=23" />
+<link rel="stylesheet" href="config.css?v=20" />
+<link rel="stylesheet" href="checkout.css?v=20" />
+</head>
+<body class="loading">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="homeload">
+    <div class="hl-mark">LILITH</div>
+    <div class="hl-sub">Serpent Fine Jewellery</div>
+    <div class="hl-bar"><span id="loadFill"></span></div>
+  </div>
+
+  <div id="announce" aria-hidden="true">
+    <div class="an-track">
+      <span>Complimentary insured worldwide delivery</span><span>Each piece cast to order, finished by a single hand</span><span>Book a private viewing with a LILITH advisor</span>
+      <span>Complimentary insured worldwide delivery</span><span>Each piece cast to order, finished by a single hand</span><span>Book a private viewing with a LILITH advisor</span>
+    </div>
+  </div>
+
+  <header id="mast">
+    <div class="mh-left">
+      <button id="menuBtn" class="mh-menu" aria-label="Open menu" aria-expanded="false">
+        <span class="mh-menu-ico"><i></i><i></i></span><span class="mh-menu-txt">Menu</span>
+      </button>
+      <nav class="mh-inline">
+        <a data-link href="#serpent">The Serpent</a>
+        <a data-link href="#atelier">The Atelier</a>
+        <a data-link href="#collection">Collection</a>
+        <a data-link href="#services">Services</a>
+      </nav>
+    </div>
+    <div class="mh-mark">LILITH</div>
+    <div class="mh-utils">
+      <button id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+      <button aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+      <button data-buy="gold" aria-label="Reservations"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></button>
+      <span class="mh-region">United States · USD</span>
+      <a class="mh-pre" data-buy="gold" href="#buy">Preorder</a>
+    </div>
+  </header>
+
+  <!-- ============ FULLSCREEN MENU ============ -->
+  <nav id="menu" aria-hidden="true">
+    <div class="menu-grid">
+      <ul class="menu-links">
+        <li><a data-link href="#story"><span class="ml-no">01</span><span class="ml-tx">The Maison</span></a></li>
+        <li><a data-link href="#collection"><span class="ml-no">02</span><span class="ml-tx">The Collection</span></a></li>
+        <li><a data-link href="#atelier"><span class="ml-no">03</span><span class="ml-tx">The Atelier</span></a></li>
+        <li><a data-link href="#signature"><span class="ml-no">04</span><span class="ml-tx">The Signature</span></a></li>
+        <li><a data-buy="gold" href="#buy"><span class="ml-no">05</span><span class="ml-tx">Compose Yours</span></a></li>
+      </ul>
+      <div class="menu-aside">
+        <div class="menu-col">
+          <p class="menu-h">Client Care</p>
+          <a data-link href="#faq">Sizing &amp; Fit</a><a data-link href="#faq">Shipping</a><a data-link href="#faq">FAQ</a>
+        </div>
+        <div class="menu-col">
+          <p class="menu-h">Contact</p>
+          <a href="mailto:atelier@lilith.maison">atelier@lilith.maison</a><a href="#">Instagram</a><a href="#">WhatsApp</a>
+        </div>
+        <p class="menu-est">Est. MMXXVI — Serpent Fine Jewellery. Made to order, delivered worldwide.</p>
+      </div>
+      <figure class="menu-tile" data-buy="gold"><img src="img/config/rose-open.webp" alt="The LILITH serpent" /><figcaption>Compose yours →</figcaption></figure>
+    </div>
+  </nav>
+
+  <!-- HERO · frame-on-scroll film -->
+  <section id="hero">
+    <div class="hero-stage">
+      <canvas id="frames"></canvas>
+      <div class="hero-vignette"></div>
+      <div class="hero-text">
+        <div class="hero-cap active" data-cap="0"><p class="cap-no">I · Maison Lilith</p><h1>The Eternal<br />Serpent</h1></div>
+        <div class="hero-cap" data-cap="1"><p class="cap-no">II · Yellow Gold · Ruby</p><h1>Forged<br /><em>in fire</em></h1></div>
+        <div class="hero-cap" data-cap="2"><p class="cap-no">III · Platinum · Emerald</p><h1>Cooled<br /><em>in water</em></h1></div>
+      </div>
+      <div class="hero-hint"><span>Scroll</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- SITE -->
+  <main id="site">
+    <svg class="spine" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
+      <path id="spinePath" d="M50 0 C20 64 20 128 50 180 S82 296 50 360 S18 476 50 540 S82 656 50 720 S18 836 50 900 S80 972 50 1000" />
+    </svg>
+
+    <div class="wrap">
+
+      <!-- THE SERPENT — signature motif spotlight -->
+      <section class="serpent-spot" id="serpent">
+        <div class="ss-media" data-reveal><img src="img/config/gold-base.webp" alt="The LILITH serpent in yellow gold, coiled three times" loading="lazy" /></div>
+        <div class="ss-copy">
+          <span class="mark" data-reveal>The Signature</span>
+          <h2 class="kinetic" data-reveal style="--d:.05s">The <em>Ouroboros</em></h2>
+          <p class="ss-lede" data-reveal style="--d:.12s">One serpent, coiled three times, swallowing its own beginning. Worn for rebirth, for protection, for the part of yourself you were told to hide. Cast in solid metal, alive in the light.</p>
+          <a class="link-quiet ss-cta" data-link href="#collection" data-reveal style="--d:.18s">Discover the collection</a>
+        </div>
+      </section>
+
+      <!-- INCANTATION (image + text split) -->
+      <section class="incant split-incant">
+        <div class="ic-copy">
+          <h1 class="kinetic" data-reveal>The serpent<br /><em>remembers.</em></h1>
+          <p class="lede" data-reveal style="--d:.1s">Solid gold and platinum, coiled by a single hand. No two are alike.</p>
+          <div class="cta-row" data-reveal style="--d:.18s">
+            <button class="btn btn-primary" data-buy="gold"><span>Compose yours</span></button>
+            <a class="link-quiet" data-link href="#collection">The collection</a>
+          </div>
+        </div>
+        <div class="sp-media" data-reveal style="--d:.08s"><img src="img/config/rose-base.webp" alt="Rose gold serpent ring" loading="lazy" /></div>
+      </section>
+
+      <!-- RIBBON -->
+      <div class="ribbon" aria-hidden="true">
+        <div class="ribbon-track">
+          <span>Made to order</span><b>&#10022;</b><span>Each piece singular</span><b>&#10022;</b><span>Cast in solid gold &amp; platinum</span><b>&#10022;</b><span>Finished by one hand</span><b>&#10022;</b>
+          <span>Made to order</span><b>&#10022;</b><span>Each piece singular</span><b>&#10022;</b><span>Cast in solid gold &amp; platinum</span><b>&#10022;</b><span>Finished by one hand</span><b>&#10022;</b>
+        </div>
+      </div>
+
+      <!-- STORY -->
+      <section class="story" id="story">
+        <div class="story-grid">
+          <div class="sp-media" data-reveal><img src="img/config/platinum-base.webp" alt="Platinum serpent ring" loading="lazy" /></div>
+          <div class="story-text">
+            <h2 class="kinetic" data-reveal style="--d:.06s">A jewel that<br />holds your <em>gaze.</em></h2>
+            <div class="story-body" data-reveal style="--d:.12s">
+              <p>Cast in solid metal, hammered and faceted by hand until light moves across it like scales. The eyes are set last.</p>
+              <p class="sign">Est. MMXXVI — cast &amp; finished in-atelier · responsibly sourced metals</p>
+            </div>
+          </div>
+        </div>
+        <blockquote class="pull" data-reveal>
+          <p>To wear the serpent is to wear the part of yourself you were <em>told to hide.</em></p>
+          <div class="pull-rule"></div>
+        </blockquote>
+      </section>
+
+      <!-- ATELIER -->
+      <section class="atelier" id="atelier">
+        <div class="atelier-head">
+          <span class="mark" data-reveal>The Atelier</span>
+          <h2 class="kinetic" data-reveal>Forged by a single hand</h2>
+        </div>
+        <ol class="craft">
+          <li data-reveal><span class="n">i</span><h3>Cast in solid metal</h3><p>18k gold or 950 platinum. Never plated.</p></li>
+          <li data-reveal style="--d:.06s"><span class="n">ii</span><h3>Hammered &amp; faceted</h3><p>Struck by hand, scale by scale.</p></li>
+          <li data-reveal style="--d:.12s"><span class="n">iii</span><h3>Eyes set by hand</h3><p>Ruby, emerald or onyx. Or bare.</p></li>
+          <li data-reveal style="--d:.18s"><span class="n">iv</span><h3>Finished &amp; numbered</h3><p>Polished, hallmarked, numbered.</p></li>
+        </ol>
+      </section>
+
+      <!-- COLLECTION -->
+      <section class="collection" id="collection">
+        <div class="collection-head">
+          <span class="mark" data-reveal>The Collection</span>
+          <h2 class="kinetic" data-reveal>Three Serpents</h2>
+        </div>
+
+        <article class="serpent" data-reveal data-buy="gold">
+          <div class="serpent-media"><img src="img/config/gold-eyes.webp" alt="Yellow gold serpent ring with ruby eyes coiled three times" loading="lazy" /><span class="serpent-idx">i</span></div>
+          <div class="serpent-info">
+            <h3>Yellow Gold</h3>
+            <p class="gem">18k · Ruby gaze</p>
+            <div class="row"><span class="price">from $6,000</span><span class="configure">Configure</span></div>
+          </div>
+        </article>
+
+        <article class="serpent" data-reveal data-buy="rose">
+          <div class="serpent-media"><img src="img/config/rose-eyes.webp" alt="Rose gold serpent ring with black onyx eyes coiled three times" loading="lazy" /><span class="serpent-idx">ii</span></div>
+          <div class="serpent-info">
+            <h3>Rose Gold</h3>
+            <p class="gem">18k · Onyx gaze</p>
+            <div class="row"><span class="price">from $7,000</span><span class="configure">Configure</span></div>
+          </div>
+        </article>
+
+        <article class="serpent" data-reveal data-buy="platinum">
+          <div class="serpent-media"><img src="img/config/platinum-eyes.webp" alt="Platinum serpent ring with emerald eyes coiled three times" loading="lazy" /><span class="serpent-idx">iii</span></div>
+          <div class="serpent-info">
+            <h3>Platinum</h3>
+            <p class="gem">950 · Emerald gaze</p>
+            <div class="row"><span class="price">from $8,500</span><span class="configure">Configure</span></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIGNATURE -->
+      <section class="signature" id="signature">
+        <div class="sig-media" data-reveal>
+          <img src="img/config/gold-open.webp" alt="Yellow gold serpent with its jaw open as a working cigarette holder" loading="lazy" />
+          <span class="ember"></span>
+        </div>
+        <div class="sig-copy">
+          <h2 class="kinetic" data-reveal>The open<br /><em>mouth.</em></h2>
+          <p class="desc" data-reveal style="--d:.1s">The agape jaw becomes a working cigarette holder. Complimentary with a gemstone gaze.</p>
+          <p class="note" data-reveal style="--d:.16s">Equal parts jewel and object.</p>
+          <button class="btn btn-ghost" data-reveal style="--d:.22s" data-buy="gold"><span>Compose the agape</span></button>
+          <div class="sig-strip" data-reveal style="--d:.3s">
+            <figure><img src="img/config/rose-open.webp" alt="Rose gold serpent, mouth open" loading="lazy" /><figcaption>Rose Gold</figcaption></figure>
+            <figure><img src="img/config/platinum-open.webp" alt="Platinum serpent, mouth open" loading="lazy" /><figcaption>Platinum</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- STONES -->
+      <section class="stones" id="stones">
+        <div class="stones-head">
+          <h2 class="kinetic" data-reveal>Three stones,<br />three temperaments</h2>
+        </div>
+        <div class="stone-row">
+          <div class="stone" data-reveal>
+            <span class="stone-disc" style="--c1:#d0334a;--c2:#6e1020"></span>
+            <div class="stone-txt"><h3>Ruby</h3><p class="for">Yellow Gold</p></div>
+          </div>
+          <div class="stone" data-reveal style="--d:.07s">
+            <span class="stone-disc" style="--c1:#3c3c43;--c2:#0a0a0c"></span>
+            <div class="stone-txt"><h3>Black Onyx</h3><p class="for">Rose Gold</p></div>
+          </div>
+          <div class="stone" data-reveal style="--d:.14s">
+            <span class="stone-disc" style="--c1:#1fae74;--c2:#0a523a"></span>
+            <div class="stone-txt"><h3>Emerald</h3><p class="for">Platinum</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BESPOKE -->
+      <section class="bespoke">
+        <h2 class="kinetic" data-reveal>Your serpent does<br />not yet <em>exist.</em></h2>
+        <p class="lede" data-reveal style="--d:.08s">We cast it the moment you reserve. For you, and no one else.</p>
+        <button class="btn btn-primary" data-reveal style="--d:.16s" data-buy="gold"><span>Compose yours</span></button>
+      </section>
+
+      <!-- SERVICES & APPOINTMENT -->
+      <section class="services" id="services">
+        <div class="services-head">
+          <span class="mark" data-reveal>Services &amp; Appointment</span>
+          <h2 class="kinetic" data-reveal style="--d:.06s">At your service</h2>
+        </div>
+        <div class="services-grid" data-reveal>
+          <div class="service">
+            <svg class="sv-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            <h4>Private Viewing</h4>
+            <p>Meet a LILITH advisor by video or in person to see the serpent before it is cast.</p>
+            <a data-buy="gold" href="#buy">Book an appointment</a>
+          </div>
+          <div class="service">
+            <svg class="sv-ic" viewBox="0 0 24 24"><path d="M3 7l14-4 4 14-14 4z"/><path d="M7 8v3M10 7v3M13 9v3"/></svg>
+            <h4>Sizing &amp; Fit</h4>
+            <p>Your size confirmed by gauge or your own measurements before a single piece is made.</p>
+            <a data-buy="gold" href="#buy">Size guide</a>
+          </div>
+          <div class="service">
+            <svg class="sv-ic" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 5l3 3"/></svg>
+            <h4>Engraving</h4>
+            <p>A private mark inside the band — a date, an initial, a word only you will know.</p>
+            <a data-buy="gold" href="#buy">Learn more</a>
+          </div>
+          <div class="service">
+            <svg class="sv-ic" viewBox="0 0 24 24"><path d="M12 3l2.5 6 6.5.5-5 4.5 1.5 6.5L12 17l-5.5 3.5L8 14 3 9.5 9.5 9z"/></svg>
+            <h4>Care &amp; Resizing</h4>
+            <p>Lifelong service on every serpent — cleaning, re-finishing and resizing, in-atelier.</p>
+            <a data-buy="gold" href="#buy">Our services</a>
+          </div>
+        </div>
+        <div class="services-foot">
+          <p>Speak with an advisor — <a href="mailto:atelier@lilith.maison" style="color:var(--blood-2)">atelier@lilith.maison</a> · WhatsApp +1 (212) 000-0000</p>
+          <button class="btn btn-primary" data-buy="gold"><span>Book a private viewing</span></button>
+        </div>
+      </section>
+
+      <!-- ASSURANCES -->
+      <section class="assure">
+        <div class="assure-item" data-reveal><span class="glyph">&#10022;</span><h4>Solid gold &amp; platinum</h4><p>18k &amp; 950, never plated</p></div>
+        <div class="assure-item" data-reveal style="--d:.05s"><span class="glyph">&#10022;</span><h4>Hand-finished</h4><p>Hammered &amp; faceted by one maker</p></div>
+        <div class="assure-item" data-reveal style="--d:.1s"><span class="glyph">&#10022;</span><h4>Made to order</h4><p>Cast for you, 6 to 8 weeks</p></div>
+        <div class="assure-item" data-reveal style="--d:.15s"><span class="glyph">&#10022;</span><h4>Worldwide delivery</h4><p>Insured &amp; discreet</p></div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" id="faq">
+        <div class="faq-head"><h2 class="kinetic" data-reveal>Questions of the house</h2></div>
+        <div class="faq-list" data-reveal>
+          <details><summary>What metals and purities do you use?<i></i></summary><p>Solid 18k yellow and rose gold, and 950 platinum. Every serpent is solid throughout, never plated, never hollow.</p></details>
+          <details><summary>How is sizing handled?<i></i></summary><p>After you reserve, a client advisor confirms your exact size, by ring gauge or your existing measurements, before we cast.</p></details>
+          <details><summary>How long until my serpent arrives?<i></i></summary><p>Each piece is cast and finished to order by a single maker. Expect six to eight weeks from confirmation, shipped fully insured.</p></details>
+          <details><summary>What is the open mouth?<i></i></summary><p>The agape jaw transforms the serpent into a working cigarette holder, a LILITH signature, offered complimentary when you choose a gemstone gaze.</p></details>
+          <details><summary>How does the preorder work?<i></i></summary><p>Reserve your configuration now to secure your place and price. A client advisor confirms the details, sizing and deposit before any work begins.</p></details>
+        </div>
+      </section>
+
+      <!-- INNER CIRCLE -->
+      <section class="inner-circle">
+        <h2 class="kinetic" data-reveal>First to see each<br />new <em>serpent.</em></h2>
+        <form class="ic-form" data-reveal style="--d:.08s" onsubmit="return false">
+          <input type="email" placeholder="Your email" aria-label="Your email" />
+          <button type="submit" aria-label="Join">&#8594;</button>
+        </form>
+        <p class="ic-fine" data-reveal style="--d:.14s">Private previews · Early access · No noise</p>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="foot">
+        <div class="foot-top">
+          <div>
+            <div class="foot-mark">LILITH</div>
+            <p class="foot-tag">Serpent Fine Jewellery · Est. MMXXVI</p>
+          </div>
+          <nav class="foot-cols">
+            <div class="foot-col"><h5>The Maison</h5><a data-link href="#story">The Origin</a><a data-link href="#serpent">The Serpent</a><a data-link href="#atelier">The Atelier</a><a href="#">Responsible Sourcing</a></div>
+            <div class="foot-col"><h5>The Collection</h5><a data-buy="gold" href="#buy">Yellow Gold</a><a data-buy="rose" href="#buy">Rose Gold</a><a data-buy="platinum" href="#buy">Platinum</a><a data-buy="gold" href="#buy">The Agape</a></div>
+            <div class="foot-col"><h5>Services</h5><a data-link href="#services">Book an Appointment</a><a data-link href="#faq">Sizing &amp; Fit</a><a data-link href="#services">Engraving</a><a data-link href="#services">Care &amp; Resizing</a></div>
+            <div class="foot-col"><h5>Client Care</h5><a data-link href="#faq">FAQ</a><a href="#">Track your reservation</a><a href="#">Shipping &amp; Returns</a><a href="mailto:atelier@lilith.maison">Contact</a></div>
+            <div class="foot-col"><h5>Connect</h5><a href="mailto:atelier@lilith.maison">atelier@lilith.maison</a><a href="#">WhatsApp</a><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+          </nav>
+        </div>
+        <div class="foot-bottom">
+          <p class="foot-line">Made to order · Each piece unique · Insured worldwide delivery</p>
+          <p class="fine">© MMXXVI Maison Lilith — Preorder now open</p>
+        </div>
+        <div class="foot-legal">
+          <span class="fl-region">&#9737; United States · USD · English</span>
+          <div class="fl-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Conditions of Sale</a><a href="#">Cookies</a><a href="#">Accessibility</a></div>
+        </div>
+      </footer>
+
+    </div><!-- /.wrap -->
+  </main>
+
+  <!-- ============ CONFIGURATOR ============ -->
+  <div id="config" aria-hidden="true">
+    <button id="cfgClose" aria-label="Close">&times;</button>
+    <div class="cfg-stage">
+      <img id="cfgImg" src="img/config/gold-base.webp" alt="Serpent ring preview" />
+      <div class="cfg-vignette"></div>
+      <div class="cfg-stage-label"><span>Live preview</span></div>
+    </div>
+    <div class="cfg-panel">
+      <p class="cfg-step">Compose your serpent</p>
+      <h3 id="cfgName">Yellow Gold</h3>
+      <p id="cfgSummary" class="cfg-summary">No stones · Mouth closed</p>
+      <div class="cfg-group">
+        <span class="cfg-label">Metal</span>
+        <div class="cfg-swatches" id="cfgMetals">
+          <button data-metal="gold" class="sw" style="--sw:#d8a979"><i></i><b>Yellow Gold</b></button>
+          <button data-metal="rose" class="sw" style="--sw:#e7b9a3"><i></i><b>Rose Gold</b></button>
+          <button data-metal="platinum" class="sw" style="--sw:#cdd2d6"><i></i><b>Platinum</b></button>
+        </div>
+      </div>
+      <div class="cfg-group">
+        <span class="cfg-label">Eyes</span>
+        <div class="cfg-options" id="cfgEyes">
+          <button data-eyes="0" class="opt"><b>Bare</b><small>No stones</small><em>Included</em></button>
+          <button data-eyes="1" class="opt"><b id="cfgGemName">Ruby</b><small id="cfgGemDesc">Gemstone eyes</small><em id="cfgEyesPrice">+$1,500</em></button>
+        </div>
+      </div>
+      <div class="cfg-group">
+        <span class="cfg-label">Mouth</span>
+        <div class="cfg-options" id="cfgMouth">
+          <button data-open="0" class="opt"><b>Closed</b><small>Classic serpent</small><em>Included</em></button>
+          <button data-open="1" class="opt"><b>Open · Cigarette Holder</b><small id="cfgMouthHint">Available with eyes</small><em>Free</em></button>
+        </div>
+      </div>
+    </div>
+    <div class="cfg-foot">
+      <div class="cfg-price"><span>Total · Preorder</span><strong id="cfgPrice">$6,000</strong></div>
+      <button id="cfgBuy">Reserve <i>&#8594;</i></button>
+    </div>
+    <div class="cfg-done">
+      <p class="cfg-step">Preorder reserved</p>
+      <h4 id="cfgDoneTitle">Yellow Gold Serpent</h4>
+      <p id="cfgDoneSummary" class="cfg-summary"></p>
+      <p class="cfg-done-note">Thank you. Our atelier will reach out to confirm your size and hand-craft your piece, no two are ever alike.</p>
+      <button id="cfgDoneClose">Continue browsing</button>
+    </div>
+  </div>
+
+  <!-- ============ MOCK STRIPE CHECKOUT (demo · no real charge) ============ -->
+  <div id="checkout" aria-hidden="true">
+    <div class="co-shell">
+      <aside class="co-summary">
+        <button class="co-back" id="coBack" aria-label="Back to configurator">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 13L5 8l5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>LILITH</span>
+        </button>
+        <div class="co-sum-inner">
+          <p class="co-pay-label">Pay LILITH Maison</p>
+          <p class="co-amount" id="coAmount">$6,000.00</p>
+          <div class="co-line">
+            <img class="co-thumb" id="coThumb" src="img/config/gold-eyes.webp" alt="Your configured serpent" />
+            <div class="co-line-txt">
+              <p class="co-item" id="coItem">Yellow Gold Serpent</p>
+              <p class="co-desc" id="coDesc">18k · Ruby eyes · In repose</p>
+            </div>
+            <p class="co-line-amt" id="coLineAmt">$6,000.00</p>
+          </div>
+          <div class="co-row"><span>Subtotal</span><span id="coSub">$6,000.00</span></div>
+          <div class="co-row co-muted"><span>Made to order · 6–8 weeks</span><span>Insured</span></div>
+          <div class="co-row co-total"><span>Total due today</span><span id="coTotal">$6,000.00</span></div>
+          <p class="co-note">Demo preorder — this is a mock checkout, no real charge is made.</p>
+        </div>
+      </aside>
+
+      <section class="co-form">
+        <button class="co-close" id="coClose" aria-label="Close">&times;</button>
+        <form id="coPayForm" novalidate>
+          <label class="co-field"><span>Email</span>
+            <input type="email" id="coEmail" placeholder="you@email.com" autocomplete="email" /></label>
+
+          <div class="co-field"><span>Card information</span>
+            <div class="co-card">
+              <div class="co-card-num">
+                <input id="coCard" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="cc-number" />
+                <span class="co-brands" aria-hidden="true">
+                  <svg viewBox="0 0 32 20" width="26" height="17"><rect width="32" height="20" rx="3" fill="#1434CB"/><text x="16" y="14" font-size="9" font-family="Arial" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="0.5">VISA</text></svg>
+                  <svg viewBox="0 0 32 20" width="26" height="17"><rect width="32" height="20" rx="3" fill="#fff" stroke="#eee"/><circle cx="13" cy="10" r="6" fill="#EB001B"/><circle cx="19" cy="10" r="6" fill="#F79E1B" fill-opacity="0.9"/></svg>
+                  <svg viewBox="0 0 32 20" width="26" height="17"><rect width="32" height="20" rx="3" fill="#2E77BC"/><text x="16" y="13" font-size="6" font-family="Arial" font-weight="700" fill="#fff" text-anchor="middle">AMEX</text></svg>
+                </span>
+              </div>
+              <div class="co-card-row">
+                <input id="coExp" inputmode="numeric" placeholder="MM / YY" autocomplete="cc-exp" />
+                <input id="coCvc" inputmode="numeric" placeholder="CVC" autocomplete="cc-csc" />
+              </div>
+            </div>
+          </div>
+
+          <label class="co-field"><span>Name on card</span>
+            <input id="coName" placeholder="Full name" autocomplete="cc-name" /></label>
+
+          <label class="co-field"><span>Country or region</span>
+            <select id="coCountry">
+              <option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option>
+              <option>Saudi Arabia</option><option>France</option><option>Germany</option><option>Switzerland</option>
+              <option>Jordan</option><option>Canada</option><option>Australia</option><option>Other</option>
+            </select></label>
+
+          <p class="co-error" id="coErr" role="alert"></p>
+
+          <button type="submit" class="co-pay" id="coPay">
+            <span class="co-pay-txt">Pay <b id="coPayAmt">$6,000.00</b></span>
+            <span class="co-spin"></span>
+          </button>
+          <p class="co-secure">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            Secured by <b>stripe</b>
+          </p>
+          <p class="co-hint">Test card 4242 4242 4242 4242 · any future date · any CVC</p>
+        </form>
+
+        <div class="co-done" id="coDone">
+          <div class="co-check">&#10003;</div>
+          <h3>Payment received</h3>
+          <p class="co-done-sum" id="coDoneSum">Yellow Gold Serpent — $6,000</p>
+          <p class="co-order">Order <b id="coOrder">LIL-0000</b></p>
+          <p class="co-done-note">Our atelier will email <b id="coDoneEmail">you</b> to confirm your size and begin hand-crafting your piece. No two are ever alike.</p>
+          <button class="co-done-btn" id="coDoneClose">Done</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="vendor/lenis.min.js"></script>
+  <script src="home.js?v=20"></script>
+  <script src="configurator.js?v=20"></script>
+  <script src="checkout.js?v=20"></script>
+  <script src="menu.js?v=22"></script>
+  <script src="fx.js?v=20"></script>
+  <script src="award.js?v=20"></script>
+</body>
+</html>

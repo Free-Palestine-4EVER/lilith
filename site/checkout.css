@@ -1,0 +1,103 @@
+/* ============================================================
+   LILITH — mock Stripe checkout (demo · no real charge)
+   Stripe-hosted-checkout layout: summary panel + payment form
+   ============================================================ */
+#checkout{position:fixed;inset:0;z-index:130;display:flex;opacity:0;visibility:hidden;background:#fff;
+  transform:translateY(1.5%);transition:opacity .5s var(--e2),transform .55s var(--e2),visibility .5s;
+  font-family:var(--text-font);color:#1a1a1a;-webkit-font-smoothing:antialiased}
+#checkout.open{opacity:1;visibility:visible;transform:none}
+.co-shell{display:flex;width:100%;min-height:100%}
+
+/* LEFT — order summary (Stripe's merchant panel) */
+.co-summary{flex:0 0 42%;background:linear-gradient(180deg,#fbf7f4,#f4ece6);border-right:1px solid #ece5df;
+  padding:clamp(28px,4vw,56px) clamp(24px,4vw,60px);display:flex;flex-direction:column;gap:30px}
+.co-back{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;
+  font-family:var(--display);font-size:21px;letter-spacing:.16em;color:#2a1712;padding:0}
+.co-back svg{width:16px;height:16px;opacity:.6}
+.co-sum-inner{max-width:380px;margin-left:auto;margin-right:auto;width:100%;display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.co-pay-label{color:#6b5f57;font-size:14px;letter-spacing:.01em}
+.co-amount{font-family:var(--display);font-weight:500;font-size:clamp(38px,5vw,54px);line-height:1;color:#1c130e;margin:2px 0 26px}
+.co-line{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 0;border-top:1px solid #e7ded7}
+.co-thumb{width:52px;height:52px;border-radius:8px;object-fit:cover;background:#efe6df;border:1px solid #e7ded7}
+.co-item{font-size:14px;font-weight:500;color:#241712}
+.co-desc{font-size:12.5px;color:#7a6d64;margin-top:3px}
+.co-line-amt{font-size:14px;color:#241712;white-space:nowrap}
+.co-row{display:flex;justify-content:space-between;font-size:13.5px;color:#41342c;padding:9px 0}
+.co-row.co-muted{color:#8a7d73}
+.co-row.co-total{border-top:1px solid #e7ded7;margin-top:4px;padding-top:15px;font-size:15px;font-weight:600;color:#1c130e}
+.co-note{margin-top:18px;font-size:11px;letter-spacing:.04em;color:#9a8d83}
+
+/* RIGHT — payment form */
+.co-form{flex:1;position:relative;padding:clamp(28px,4vw,60px) clamp(24px,5vw,72px);
+  display:flex;align-items:flex-start;justify-content:center;overflow-y:auto}
+.co-close{position:absolute;top:18px;right:20px;width:38px;height:38px;border-radius:50%;border:1px solid #e6e6e6;
+  background:#fff;color:#555;font-size:20px;line-height:1;cursor:pointer;transition:background .25s,color .25s}
+.co-close:hover{background:#f3f3f3;color:#111}
+#coPayForm{width:100%;max-width:400px;display:flex;flex-direction:column;gap:16px;padding-top:14px}
+.co-field{display:flex;flex-direction:column;gap:7px}
+.co-field>span{font-size:13px;font-weight:500;color:#30313d}
+.co-field input,.co-field select,.co-card{
+  font-family:var(--text-font);font-size:15px;color:#1a1a1a;background:#fff;border:1px solid #e0e0e6;border-radius:8px;
+  box-shadow:0 1px 2px rgba(20,20,40,.05);transition:border-color .2s,box-shadow .2s}
+.co-field input,.co-field select{padding:12px 13px;width:100%;outline:none}
+.co-field input:focus,.co-field select:focus{border-color:var(--blood);box-shadow:0 0 0 3px color-mix(in oklab,var(--blood) 24%,transparent)}
+.co-field input::placeholder{color:#9aa0ab}
+.co-field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+/* combined card input (Stripe Element look) */
+.co-card{overflow:hidden}
+.co-card:focus-within{border-color:var(--blood);box-shadow:0 0 0 3px color-mix(in oklab,var(--blood) 24%,transparent)}
+.co-card input{border:none;box-shadow:none;border-radius:0;background:transparent}
+.co-card input:focus{box-shadow:none}
+.co-card-num{position:relative;display:flex;align-items:center;border-bottom:1px solid #e8e8ee}
+.co-card-num input{flex:1;padding-right:96px}
+.co-brands{position:absolute;right:12px;display:flex;gap:5px;align-items:center;pointer-events:none}
+.co-brands i{width:26px;height:17px;border-radius:3px;display:block;background-size:cover;opacity:.95}
+.co-card-row{display:grid;grid-template-columns:1fr 1fr}
+.co-card-row input:first-child{border-right:1px solid #e8e8ee}
+
+.co-error{color:#df1b41;font-size:12.5px;min-height:1px;margin-top:-6px}
+.co-card.err,.co-field input.err{border-color:#df1b41;box-shadow:0 0 0 3px rgba(223,27,65,.18)}
+
+.co-pay{margin-top:6px;position:relative;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--blood);color:#fff;border:none;border-radius:8px;padding:14px;cursor:pointer;
+  font-family:var(--text-font);font-size:15px;font-weight:600;letter-spacing:.01em;
+  transition:background .25s,transform .25s var(--e2);box-shadow:0 6px 18px color-mix(in oklab,var(--blood) 32%,transparent)}
+.co-pay:hover{background:var(--blood-2);transform:translateY(-1px)}
+.co-pay:disabled{opacity:.85;cursor:default;transform:none}
+.co-pay b{font-weight:700}
+.co-pay.loading .co-pay-txt{opacity:0}
+.co-spin{position:absolute;width:19px;height:19px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;opacity:0;animation:cospin .7s linear infinite}
+.co-pay.loading .co-spin{opacity:1}
+@keyframes cospin{to{transform:rotate(360deg)}}
+.co-secure{margin-top:6px;text-align:center;font-size:12px;color:#8a929e;display:flex;align-items:center;justify-content:center;gap:6px}
+.co-secure b{color:#635bff;font-weight:700;letter-spacing:-.01em}
+.co-secure svg{width:13px;height:13px;opacity:.7}
+.co-hint{text-align:center;font-size:11.5px;color:#a7adb8;margin-top:-4px}
+
+/* SUCCESS state */
+.co-done{position:absolute;inset:0;background:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:14px;padding:40px clamp(24px,6vw,60px)}
+#checkout.paid .co-done{display:flex;animation:cofade .6s var(--e2)}
+#checkout.paid #coPayForm{display:none}
+@keyframes cofade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.co-check{width:64px;height:64px;border-radius:50%;background:var(--blood);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;
+  box-shadow:0 10px 30px color-mix(in oklab,var(--blood) 34%,transparent);animation:copop .5s var(--e2)}
+@keyframes copop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+.co-done h3{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,40px);color:#1a120e}
+.co-done-sum{color:#5a4d44;font-size:14.5px}
+.co-order{font-size:13px;color:#8a7d73;letter-spacing:.02em}
+.co-order b{color:#2a1c15;font-family:var(--text-font);letter-spacing:.06em}
+.co-done-note{max-width:38ch;color:#6b5f57;font-size:13.5px;line-height:1.7;margin-top:4px}
+.co-done-btn{margin-top:14px;background:#1a120e;color:#fff;border:none;border-radius:8px;padding:13px 40px;cursor:pointer;
+  font-family:var(--text-font);font-size:13px;letter-spacing:.16em;text-transform:uppercase;transition:background .25s}
+.co-done-btn:hover{background:var(--blood)}
+
+/* mobile: stack, summary on top */
+@media (max-width:780px){
+  .co-shell{flex-direction:column}
+  .co-summary{flex:none;border-right:none;border-bottom:1px solid #ece5df;padding:24px 22px 26px}
+  .co-amount{margin-bottom:16px}
+  .co-form{padding:26px 22px 60px}
+  .co-back{font-size:18px}
+}

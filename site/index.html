@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#efe6e2" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="LILITH" />
+<title>LILITH — Serpent Fine Jewellery</title>
+<meta name="description" content="LILITH — handmade serpent fine jewellery. Each piece cast in solid gold and platinum and finished by a single hand." />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preload" href="home.html" as="document" />
+<link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="fonts.css?v=20" />
+<link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="loading">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="brand">
+    <div class="b-logo">LILITH</div>
+    <div class="b-tag">Serpent Fine Jewellery</div>
+    <div class="pre-bar"><span id="preFill"></span></div>
+  </div>
+
+  <!-- LOADER · frame-on-scroll -->
+  <section id="loader">
+    <div class="loader-stage">
+      <canvas id="loaderCanvas"></canvas>
+      <div class="loader-veil" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <div class="loader-hint"><span>Scroll to wake the serpent</span><i></i></div>
+  <a id="enterBtn" href="home.html">Enter the Maison</a>
+
+  <script src="vendor/lenis.min.js"></script>
+  <script src="loader-page.js?v=16"></script>
+  <script src="fx.js?v=20"></script>
+</body>
+</html>

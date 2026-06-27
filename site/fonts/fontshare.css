@@ -1,0 +1,50 @@
+/* Melodrama */
+@font-face {
+  font-family: 'Melodrama';
+  src: url('//cdn.fontshare.com/wf/VEUKFNC77KIIUSHNOWJWAF2K4XRJIN3O/QVM7H4UBRHRYAZVIJFG42NIFQOHEU4LT/RSPG5F452B5Q23RR6KSVIVZS3KHJF6UY.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/VEUKFNC77KIIUSHNOWJWAF2K4XRJIN3O/QVM7H4UBRHRYAZVIJFG42NIFQOHEU4LT/RSPG5F452B5Q23RR6KSVIVZS3KHJF6UY.woff') format('woff'),
+       url('//cdn.fontshare.com/wf/VEUKFNC77KIIUSHNOWJWAF2K4XRJIN3O/QVM7H4UBRHRYAZVIJFG42NIFQOHEU4LT/RSPG5F452B5Q23RR6KSVIVZS3KHJF6UY.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('//cdn.fontshare.com/wf/V63VHYDAZAEU2GZUBBRXMY6QQ55K3G7S/KRLBF3QMOZHK3UT3KYCLL3BIJFQPGJBN/FOOWDQGE4VX5EPMJQI3JW5W7V7YA4JTP.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/V63VHYDAZAEU2GZUBBRXMY6QQ55K3G7S/KRLBF3QMOZHK3UT3KYCLL3BIJFQPGJBN/FOOWDQGE4VX5EPMJQI3JW5W7V7YA4JTP.woff') format('woff'),
+       url('//cdn.fontshare.com/wf/V63VHYDAZAEU2GZUBBRXMY6QQ55K3G7S/KRLBF3QMOZHK3UT3KYCLL3BIJFQPGJBN/FOOWDQGE4VX5EPMJQI3JW5W7V7YA4JTP.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('//cdn.fontshare.com/wf/FMIFUSZQKVN6G2NCRCXK5TPTKXYXKKL4/O66D3TBMFNXSQZEQQPR3PJJVE3NRVCMA/DNLDXNUKJAOEZM6YJM654QGAZ3EXZIXD.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/FMIFUSZQKVN6G2NCRCXK5TPTKXYXKKL4/O66D3TBMFNXSQZEQQPR3PJJVE3NRVCMA/DNLDXNUKJAOEZM6YJM654QGAZ3EXZIXD.woff') format('woff'),
+       url('//cdn.fontshare.com/wf/FMIFUSZQKVN6G2NCRCXK5TPTKXYXKKL4/O66D3TBMFNXSQZEQQPR3PJJVE3NRVCMA/DNLDXNUKJAOEZM6YJM654QGAZ3EXZIXD.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Supreme */
+@font-face {
+  font-family: 'Supreme';
+  src: url('//cdn.fontshare.com/wf/UDGUA26XVGIV6IQWMQNGGAL7FQZFY227/E6HQU6YVWTGYX3KW3DF66KAAJ224ZDU6/5ZZU4JM62PS7KOJ7BOKLPL3AEO2G76TS.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/UDGUA26XVGIV6IQWMQNGGAL7FQZFY227/E6HQU6YVWTGYX3KW3DF66KAAJ224ZDU6/5ZZU4JM62PS7KOJ7BOKLPL3AEO2G76TS.woff') format('woff'),
+       url('//cdn.fontshare.com/wf/UDGUA26XVGIV6IQWMQNGGAL7FQZFY227/E6HQU6YVWTGYX3KW3DF66KAAJ224ZDU6/5ZZU4JM62PS7KOJ7BOKLPL3AEO2G76TS.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Supreme';
+  src: url('//cdn.fontshare.com/wf/OTYYUXNCZZI6EV6RSCAQFTGEGQ7JTD6B/45FLQUBI6DWIP6NYFVBTMKS6YPU3VYPT/GHZ524YD2KXKRX4PZ2S7DE3HKNPE2EKH.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/OTYYUXNCZZI6EV6RSCAQFTGEGQ7JTD6B/45FLQUBI6DWIP6NYFVBTMKS6YPU3VYPT/GHZ524YD2KXKRX4PZ2S7DE3HKNPE2EKH.woff') format('woff'),
+       url('//cdn.fontshare.com/wf/OTYYUXNCZZI6EV6RSCAQFTGEGQ7JTD6B/45FLQUBI6DWIP6NYFVBTMKS6YPU3VYPT/GHZ524YD2KXKRX4PZ2S7DE3HKNPE2EKH.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+
