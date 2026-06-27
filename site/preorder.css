@@ -1,0 +1,78 @@
+/* ============================================================
+   LILITH — preorder reservation form (sexy, dark, luxury)
+   No payment. Reserve only.
+   ============================================================ */
+#preorder{position:fixed;inset:0;z-index:135;display:flex;opacity:0;visibility:hidden;
+  background:oklch(0.12 0.014 32);transform:translateY(1.5%);
+  transition:opacity .55s var(--e2),transform .6s var(--e2),visibility .55s;
+  font-family:var(--text-font);color:oklch(0.93 0.012 80)}
+#preorder.open{opacity:1;visibility:visible;transform:none}
+.po-shell{display:flex;width:100%;min-height:100%}
+
+/* LEFT — the configured serpent, full-bleed, with overlaid title */
+.po-visual{position:relative;flex:0 0 44%;overflow:hidden;background:#0c0908;display:none}
+.po-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.po-visual-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,8,7,.25),transparent 30%,rgba(12,8,7,.4) 62%,rgba(12,8,7,.9))}
+.po-visual-copy{position:absolute;left:clamp(28px,3.4vw,54px);right:clamp(28px,3.4vw,54px);bottom:clamp(34px,4vw,60px);z-index:2}
+.po-eyebrow{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--blood-2)}
+.po-visual-copy h2{font-family:var(--display);font-weight:500;font-size:clamp(44px,4.6vw,82px);line-height:.92;margin:14px 0 16px;color:#fff}
+.po-visual-copy h2 em{color:var(--blood-2)}
+.po-sum{color:oklch(0.82 0.015 70);font-size:14px;letter-spacing:.02em}
+.po-price{font-family:var(--display);font-size:22px;color:#fff;margin-top:6px}
+@media(min-width:861px){.po-visual{display:block}}
+
+/* RIGHT — the form */
+.po-form-wrap{flex:1;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;
+  padding:clamp(30px,4vw,64px) clamp(24px,5vw,76px)}
+.po-close{position:absolute;top:18px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);
+  background:transparent;color:oklch(0.86 0.012 70);font-size:22px;line-height:1;cursor:pointer;transition:background .3s,transform .3s,border-color .3s;z-index:5}
+.po-close:hover{background:var(--blood);border-color:var(--blood);color:#fff;transform:rotate(90deg)}
+#poForm{width:100%;max-width:480px;display:flex;flex-direction:column;gap:clamp(18px,2vw,24px);padding:clamp(20px,3vh,40px) 0}
+.po-step{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--blood-2)}
+#poForm>h3{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.4vw,44px);line-height:1.02;color:#fff;margin:6px 0 8px;letter-spacing:-.01em}
+.po-row2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
+.po-field{display:flex;flex-direction:column;gap:8px}
+.po-field>span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:oklch(0.62 0.018 56)}
+.po-field input,.po-field select{
+  background:transparent;border:none;border-bottom:1px solid var(--line-2);color:#fff;
+  font-family:var(--text-font);font-size:16px;padding:8px 2px 11px;outline:none;border-radius:0;
+  transition:border-color .3s,box-shadow .3s}
+.po-field input::placeholder{color:oklch(0.46 0.02 50)}
+.po-field input:focus,.po-field select:focus{border-bottom-color:var(--blood-2);box-shadow:0 1px 0 var(--blood-2)}
+.po-field select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a98' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center}
+.po-field select option{background:#1a1310;color:#fff}
+.po-hint-link{font-size:10px;letter-spacing:.04em;text-transform:none;color:var(--blood-2);text-decoration:none;cursor:pointer}
+.po-err{color:#ff6b81;font-size:13px;min-height:1px;margin-top:-4px}
+
+.po-submit{margin-top:8px;position:relative;display:flex;align-items:center;justify-content:center;gap:14px;
+  background:var(--blood);color:#fff;border:none;border-radius:2px;padding:18px;cursor:pointer;
+  font-family:var(--text-font);font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+  transition:background .35s,transform .35s var(--e2);box-shadow:0 14px 36px color-mix(in oklab,var(--blood) 36%,transparent)}
+.po-submit::after{content:"";width:22px;height:1px;background:#fff;transition:width .35s var(--e2)}
+.po-submit:hover{background:var(--blood-2);transform:translateY(-2px)}
+.po-submit:hover::after{width:34px}
+.po-submit:disabled{opacity:.85;cursor:default;transform:none}
+.po-submit.loading .po-submit-tx,.po-submit.loading::after{opacity:0}
+.po-spin{position:absolute;width:19px;height:19px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;opacity:0;animation:cospin .7s linear infinite}
+.po-submit.loading .po-spin{opacity:1}
+.po-fine{color:oklch(0.56 0.02 52);font-size:12px;line-height:1.7;letter-spacing:.01em}
+.po-fine b{color:oklch(0.74 0.018 60);font-weight:500}
+
+/* SUCCESS */
+.po-done{position:absolute;inset:0;background:oklch(0.12 0.014 32);display:none;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:14px;padding:40px clamp(26px,6vw,64px)}
+#preorder.done .po-done{display:flex;animation:cofade .6s var(--e2)}
+#preorder.done #poForm{display:none}
+.po-seal{width:64px;height:64px;border-radius:50%;border:1px solid var(--blood-2);color:var(--blood-2);display:flex;align-items:center;justify-content:center;font-size:24px;
+  box-shadow:0 0 0 6px color-mix(in oklab,var(--blood) 12%,transparent);animation:copop .5s var(--e2)}
+.po-done h3{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,42px);color:#fff}
+.po-done-no{font-size:13px;letter-spacing:.04em;color:oklch(0.66 0.02 56)}
+.po-done-no b{color:#fff;letter-spacing:.08em}
+.po-done-note{max-width:40ch;color:oklch(0.66 0.02 56);font-size:13.5px;line-height:1.75}
+.po-done-note b{color:#fff;font-weight:500}
+.po-done-btn{margin-top:14px;background:transparent;color:#fff;border:1px solid var(--line-2);border-radius:2px;padding:15px 38px;cursor:pointer;
+  font-family:var(--text-font);font-size:11px;letter-spacing:.24em;text-transform:uppercase;transition:background .3s,border-color .3s}
+.po-done-btn:hover{background:var(--blood);border-color:var(--blood)}
+
+@media(max-width:520px){.po-row2{grid-template-columns:1fr}}

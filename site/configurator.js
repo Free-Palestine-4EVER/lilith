@@ -79,14 +79,12 @@
   $('cfgBuy').addEventListener('click', () => {
     const m = METALS[state.metal];
     const summary = [ m.purity, state.eyes ? m.gem+' eyes' : 'Bare', state.open ? 'Agape' : 'In repose' ].join(' · ');
-    if (window.openCheckout){
-      window.openCheckout({
-        metal:state.metal, title:`${m.name} Serpent`, purity:m.purity, gem:m.gem,
-        eyes:state.eyes, open:state.open, summary, price:price(), priceText:money(price()),
-        img:img.getAttribute('src')
-      });
-      return;
-    }
+    const order = {
+      metal:state.metal, title:`${m.name} Serpent`, purity:m.purity, gem:m.gem,
+      eyes:state.eyes, open:state.open, summary, price:price(), priceText:money(price()),
+      img:img.getAttribute('src')
+    };
+    if (window.openPreorder){ window.openPreorder(order); return; }
     /* fallback confirmation if checkout is unavailable */
     $('cfgDoneTitle').textContent = `${m.name} Serpent`;
     $('cfgDoneSummary').textContent = summary + ' — ' + money(price());

@@ -189,3 +189,26 @@ and add: "match the ring's metal and eye stones to the second attached image."
 FRONT vs BACK: attach a front-facing or back-of-hand reference and reuse the
 same template — it copies whatever pose you give it.
 Save as: worn-gold-1.jpg / worn-rose-1.jpg / worn-plat-1.jpg in site/img/
+
+
+============================================================
+SEEDANCE — 3 SEPARATE ROTATING VIDEOS (one per metal, 1:1 loop)
+Run 3 times, attaching each variation's 1:1 photo. These become
+the scroll-changing collection videos.
+============================================================
+TEMPLATE (attach that metal's photo):
+Using the attached photo of the [METAL] serpent ring, create a continuous square
+1:1 video loop: the ring stays locked dead-center and slowly rotates a full 360
+degrees, always tack-sharp, holding its exact shape, its [METAL] color and [GEM]
+eyes unchanged. Soft studio key light, slow specular highlights rolling across the
+hammered facets, [BG] gradient background, shallow depth of field, premium dreamlike
+jewelry commercial, 8k, fine film grain, seamless loop, no text, no logos, no hands,
+no people.
+
+FILL PER VIDEO:
+• GOLD     — [METAL]=warm 18k yellow gold · [GEM]=deep-red ruby   · [BG]=warm champagne
+• ROSE     — [METAL]=blush rose gold       · [GEM]=black onyx       · [BG]=soft blush-pink
+• PLATINUM — [METAL]=cool silver platinum  · [GEM]=emerald-green    · [BG]=cool silver-grey
+
+→ Save as site/video/gold.mp4, video/rose.mp4, video/platinum.mp4
+  I'll wire the collection so the ring video swaps/scrubs as you scroll.

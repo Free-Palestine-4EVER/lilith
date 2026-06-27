@@ -11,12 +11,15 @@
 <title>LILITH — The Maison</title>
 <meta name="description" content="LILITH — handmade serpent fine jewellery. Each piece cast in solid gold and platinum and finished by a single hand. No two are alike." />
 <link rel="manifest" href="manifest.json" />
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="fonts/supreme-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="fonts.css?v=20" />
 <link rel="stylesheet" href="styles.css?v=23" />
 <link rel="stylesheet" href="config.css?v=20" />
+<link rel="stylesheet" href="preorder.css?v=24" />
 <link rel="stylesheet" href="checkout.css?v=20" />
 </head>
 <body class="loading">
@@ -394,6 +397,57 @@
     </div>
   </div>
 
+  <!-- ============ PREORDER RESERVATION (no payment) ============ -->
+  <div id="preorder" aria-hidden="true">
+    <div class="po-shell">
+      <aside class="po-visual">
+        <img id="poImg" src="img/config/gold-eyes.webp" alt="Your serpent" />
+        <div class="po-visual-grad"></div>
+        <div class="po-visual-copy">
+          <p class="po-eyebrow">Preorder · No payment today</p>
+          <h2>Reserve your<br /><em>serpent</em></h2>
+          <p class="po-sum" id="poSum">Yellow Gold · Ruby eyes · In repose</p>
+          <p class="po-price" id="poPrice">from $6,000</p>
+        </div>
+      </aside>
+      <section class="po-form-wrap">
+        <button class="po-close" id="poClose" aria-label="Close">&times;</button>
+        <form id="poForm" novalidate>
+          <p class="po-step">Begin your reservation</p>
+          <h3>A serpent, cast for you alone.</h3>
+          <div class="po-row2">
+            <label class="po-field"><span>First name</span><input id="poFirst" autocomplete="given-name" /></label>
+            <label class="po-field"><span>Last name</span><input id="poLast" autocomplete="family-name" /></label>
+          </div>
+          <label class="po-field"><span>Email</span><input id="poEmail" type="email" autocomplete="email" placeholder="you@email.com" /></label>
+          <label class="po-field"><span>Phone · WhatsApp</span><input id="poPhone" autocomplete="tel" placeholder="+1 …" /></label>
+          <div class="po-row2">
+            <label class="po-field"><span>Ring size</span><input id="poSize" placeholder="US 6 — or 'help me'" /></label>
+            <label class="po-field"><span>Country</span>
+              <select id="poCountry">
+                <option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option>
+                <option>Saudi Arabia</option><option>France</option><option>Germany</option><option>Switzerland</option>
+                <option>Jordan</option><option>Canada</option><option>Australia</option><option>Other</option>
+              </select>
+            </label>
+          </div>
+          <label class="po-field"><span>Engraving — optional</span><input id="poEngrave" placeholder="A date, an initial, a word only you will know…" /></label>
+          <p class="po-err" id="poErr" role="alert"></p>
+          <button type="submit" class="po-submit" id="poSubmit"><span class="po-submit-tx">Reserve my serpent</span><span class="po-spin"></span></button>
+          <p class="po-fine">No payment today. An advisor replies within 24 hours to confirm your size and price, then we hand-craft your piece. <b>No two are ever alike.</b></p>
+        </form>
+        <div class="po-done" id="poDone">
+          <div class="po-seal">&#10022;</div>
+          <p class="po-step">Reserved</p>
+          <h3 id="poDoneTitle">Your Yellow Gold Serpent</h3>
+          <p class="po-done-no">Reservation <b id="poNo">LIL-0000</b></p>
+          <p class="po-done-note">Thank you, <b id="poDoneName">—</b>. An advisor will reach out to <b id="poDoneEmail">you</b> within 24 hours to confirm your size and begin the casting.</p>
+          <button class="po-done-btn" id="poDoneClose">Close</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
   <!-- ============ MOCK STRIPE CHECKOUT (demo · no real charge) ============ -->
   <div id="checkout" aria-hidden="true">
     <div class="co-shell">
@@ -480,7 +534,8 @@
 
   <script src="vendor/lenis.min.js"></script>
   <script src="home.js?v=20"></script>
-  <script src="configurator.js?v=20"></script>
+  <script src="configurator.js?v=24"></script>
+  <script src="preorder.js?v=24"></script>
   <script src="checkout.js?v=20"></script>
   <script src="menu.js?v=22"></script>
   <script src="fx.js?v=20"></script>
