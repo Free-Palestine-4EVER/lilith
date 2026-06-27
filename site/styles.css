@@ -100,7 +100,7 @@ body.scrolled #mast::before{opacity:1}
    ============================================================ */
 #hero{position:relative;height:560vh;background:var(--ink)}
 .hero-stage{position:sticky;top:0;height:100svh;height:100dvh;width:100%;overflow:hidden;background:var(--ink)}
-#frames{display:block;width:100%;height:100%;transform:translateZ(0);will-change:transform;backface-visibility:hidden}
+#frames{display:block;width:100%;height:100%;transform:translateZ(0);will-change:transform;backface-visibility:hidden;font-size:16px}
 .hero-vignette{position:absolute;inset:0;pointer-events:none;background:
   radial-gradient(130% 90% at 50% 38%,transparent 50%,rgba(15,6,6,.45) 100%),
   linear-gradient(to bottom,rgba(15,6,6,.5),transparent 24%,transparent 50%,rgba(15,6,6,.72) 80%,var(--ink))}
@@ -657,3 +657,85 @@ body.scrolled #mast .mh-mark,body.scrolled #mast .mh-menu,body.scrolled #mast .m
 .menu-col a:hover{color:var(--text)}
 .menu-est{color:var(--faint)}
 .menu-tile{background:#efe6df}
+
+/* v26 — collection: small heading, then sell the 3 serpent videos in a 3-up grid */
+.collection{padding-top:clamp(28px,4vw,50px)!important}
+.collection-head.sell-head{align-items:flex-start;text-align:left;max-width:1240px;margin:0 auto clamp(22px,3vw,38px);padding:0 clamp(24px,7vw,90px);gap:10px}
+.collection-head.sell-head h2{font-size:clamp(26px,3.4vw,46px)!important;line-height:1;color:var(--text)}
+.serpent-grid{display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px);max-width:1240px;margin:0 auto;padding:0 clamp(24px,7vw,90px)}
+@media(min-width:760px){.serpent-grid{grid-template-columns:repeat(3,1fr)}}
+.serpent-grid .serpent{display:flex!important;flex-direction:column;gap:0;border:none!important;padding:0!important;grid-template-columns:none!important;cursor:pointer;transition:transform .5s var(--e2)}
+.serpent-grid .serpent:hover{transform:translateY(-6px)}
+.serpent-grid .serpent .serpent-media{order:0!important;aspect-ratio:1/1;width:100%}
+.serpent-grid .serpent:nth-child(even) .serpent-media{order:0!important}
+.serpent-grid .serpent-info{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:18px 2px 0}
+.serpent-grid .serpent-info h3{font-size:clamp(24px,2.4vw,32px)}
+.serpent-grid .serpent-info .gem{color:var(--blood-2);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.serpent-grid .serpent-info .price{font-family:var(--display);font-size:21px;color:var(--text);margin-top:2px}
+.serpent-cta{margin-top:14px;align-self:stretch;justify-content:center}
+@media(min-width:760px){.serpent-cta{align-self:flex-start}}
+
+/* v27 — THREE SERPENTS scroll-scrub films + THE ADORNMENTS */
+.serpents{padding:clamp(48px,7vw,86px) 0 clamp(34px,5vw,64px)}
+.serpents-head{max-width:1240px;margin:0 auto clamp(22px,3vw,38px);padding:0 clamp(24px,7vw,90px);display:flex;flex-direction:column;gap:9px}
+.serpents-head h2{font-size:clamp(28px,3.8vw,54px);line-height:1;color:var(--text)}
+.serpents-sub{color:var(--muted);font-size:13px;letter-spacing:.02em}
+.serpents-row{display:grid;grid-template-columns:1fr;gap:clamp(26px,3.4vw,46px);max-width:1240px;margin:0 auto;padding:0 clamp(24px,7vw,90px)}
+@media(min-width:760px){.serpents-row{grid-template-columns:repeat(3,1fr)}}
+.serpent-film{cursor:pointer;transition:transform .5s var(--e2)}
+.serpent-film:hover{transform:translateY(-6px)}
+.sf-canvas-wrap{position:relative;aspect-ratio:1/1;border-radius:var(--round);overflow:hidden;border:1px solid var(--line);background:oklch(0.93 0.012 82)}
+.sf-canvas-wrap canvas{width:100%;height:100%;display:block}
+.sf-canvas-wrap .serpent-idx{position:absolute;left:16px;top:12px;font-family:var(--display);font-style:italic;font-size:18px;color:#fff;mix-blend-mode:difference;z-index:2}
+.sf-info{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:18px 2px 0}
+.sf-info h3{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.4vw,32px);color:var(--text);line-height:1}
+.sf-info .gem{color:var(--blood-2);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.sf-info .price{font-family:var(--display);font-size:21px;color:var(--text)}
+.sf-info .btn{margin-top:13px;align-self:stretch;justify-content:center}
+@media(min-width:760px){.sf-info{align-items:center;text-align:center}.sf-info .btn{align-self:center}}
+
+/* The Adornments — 2-up product grid */
+.adornments{padding:clamp(40px,6vw,80px) 0 clamp(20px,4vw,50px)}
+.adorn-grid{grid-template-columns:1fr!important}
+@media(min-width:680px){.adorn-grid{grid-template-columns:repeat(2,1fr)!important;max-width:920px}}
+.adorn-grid .serpent-media{aspect-ratio:1/1}
+
+/* v28 — menu close button */
+.menu-close{position:absolute;top:max(20px,env(safe-area-inset-top));right:clamp(22px,5vw,56px);z-index:5;
+  display:inline-flex;align-items:center;gap:11px;background:none;border:none;cursor:pointer;
+  font-family:var(--text-font);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--text);padding:8px 0;opacity:.85;transition:opacity .3s,color .3s}
+.menu-close:hover{opacity:1;color:var(--blood-2)}
+.menu-close i{position:relative;width:18px;height:18px}
+.menu-close i::before,.menu-close i::after{content:"";position:absolute;top:50%;left:0;width:18px;height:1.5px;background:currentColor}
+.menu-close i::before{transform:rotate(45deg)}
+.menu-close i::after{transform:rotate(-45deg)}
+
+/* v29 — Serpent Ear Cuff inline configurator (the image is the configurator) */
+.earcuff{padding:clamp(50px,7vw,90px) clamp(24px,7vw,90px) clamp(40px,6vw,70px);max-width:1240px;margin:0 auto}
+.earcuff-head{display:flex;flex-direction:column;gap:10px;margin-bottom:clamp(26px,3vw,42px)}
+.earcuff-head h2{font-size:clamp(30px,4.4vw,64px);line-height:1;color:var(--text)}
+.earcuff-head h2 em{color:var(--blood-2)}
+.earcuff-stage{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,56px);align-items:center;justify-items:center}
+.earcuff-frame{position:relative;width:min(440px,86vw);aspect-ratio:781/1400;border-radius:var(--round);overflow:hidden;border:1px solid var(--line);background:oklch(0.93 0.012 82);box-shadow:0 30px 70px rgba(26,16,12,.14)}
+.earcuff-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
+.earcuff-frame img.swap{opacity:0}
+.earcuff-controls{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;max-width:380px}
+.ec-meta h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.6vw,48px);line-height:1;color:var(--text)}
+.ec-meta .gem{color:var(--blood-2);font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-top:8px}
+.earcuff-swatches{display:flex;gap:16px;margin-top:4px}
+.ec-sw{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,transform .3s var(--e2)}
+.ec-sw i{width:26px;height:26px;border-radius:50%;background:var(--sw);box-shadow:inset 0 1px 3px rgba(255,255,255,.6),inset 0 -2px 4px rgba(0,0,0,.25),0 2px 6px rgba(0,0,0,.25)}
+.ec-sw:hover{transform:translateY(-2px)}
+.ec-sw.on{border-color:var(--blood-2);box-shadow:0 0 0 1px var(--blood-2)}
+.earcuff .price{font-family:var(--display);font-size:24px;color:var(--text)}
+.earcuff-controls .btn{align-self:stretch;justify-content:center}
+@media(min-width:861px){
+  .earcuff-stage{grid-template-columns:auto 1fr;justify-items:start;gap:clamp(40px,5vw,80px)}
+  .earcuff-frame{width:min(500px,42vw)}
+  .earcuff-controls{align-items:flex-start;text-align:left}
+  .earcuff-controls .btn{align-self:flex-start;min-width:220px}
+}
+
+/* v30 — gemstone descriptions */
+.stone-row .stone p:last-child{color:var(--muted);font-size:13px;line-height:1.6;max-width:30ch}
+@media(min-width:721px){.stone-row .stone p:last-child{margin-top:4px}}

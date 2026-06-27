@@ -1,2 +1,8 @@
 node_modules/
 .DS_Store
+claude-editor/
+site/claude-live.js
+site/img/uploads/
+.gild-history.json
+site/assets/gild-uploads/
+site/assets/gild-gen/

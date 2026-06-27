@@ -9,7 +9,16 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="LILITH" />
 <title>LILITH — The Maison</title>
-<meta name="description" content="LILITH — handmade serpent fine jewellery. Each piece cast in solid gold and platinum and finished by a single hand. No two are alike." />
+<meta name="description" content="LILITH — handmade serpent fine jewellery. Serpent rings, ear cuffs and adornments cast in solid gold and platinum, finished by a single hand. No two are alike." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="LILITH — Serpent Fine Jewellery" />
+<meta property="og:description" content="Handmade serpent rings, ear cuffs and adornments, cast in solid gold and platinum. Made to order, delivered worldwide." />
+<meta property="og:image" content="https://lilithmaison.com/img/earring-gold.jpg" />
+<meta property="og:url" content="https://lilithmaison.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LILITH — Serpent Fine Jewellery" />
+<meta name="twitter:image" content="https://lilithmaison.com/img/earring-gold.jpg" />
+<link rel="canonical" href="https://lilithmaison.com/" />
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
@@ -17,7 +26,7 @@
 <link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="fonts/supreme-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="fonts.css?v=20" />
-<link rel="stylesheet" href="styles.css?v=23" />
+<link rel="stylesheet" href="styles.css?v=30" />
 <link rel="stylesheet" href="config.css?v=20" />
 <link rel="stylesheet" href="preorder.css?v=24" />
 <link rel="stylesheet" href="checkout.css?v=20" />
@@ -45,9 +54,9 @@
         <span class="mh-menu-ico"><i></i><i></i></span><span class="mh-menu-txt">Menu</span>
       </button>
       <nav class="mh-inline">
-        <a data-link href="#serpent">The Serpent</a>
+        <a data-link href="#serpents">Collection</a>
+        <a data-link href="#adornments">Ear Cuff</a>
         <a data-link href="#atelier">The Atelier</a>
-        <a data-link href="#collection">Collection</a>
         <a data-link href="#services">Services</a>
       </nav>
     </div>
@@ -63,10 +72,11 @@
 
   <!-- ============ FULLSCREEN MENU ============ -->
   <nav id="menu" aria-hidden="true">
+    <button id="menuClose" class="menu-close" aria-label="Close menu"><span>Close</span><i></i></button>
     <div class="menu-grid">
       <ul class="menu-links">
         <li><a data-link href="#story"><span class="ml-no">01</span><span class="ml-tx">The Maison</span></a></li>
-        <li><a data-link href="#collection"><span class="ml-no">02</span><span class="ml-tx">The Collection</span></a></li>
+        <li><a data-link href="#serpents"><span class="ml-no">02</span><span class="ml-tx">The Collection</span></a></li>
         <li><a data-link href="#atelier"><span class="ml-no">03</span><span class="ml-tx">The Atelier</span></a></li>
         <li><a data-link href="#signature"><span class="ml-no">04</span><span class="ml-tx">The Signature</span></a></li>
         <li><a data-buy="gold" href="#buy"><span class="ml-no">05</span><span class="ml-tx">Compose Yours</span></a></li>
@@ -108,14 +118,57 @@
 
     <div class="wrap">
 
-      <!-- THE SERPENT — signature motif spotlight -->
-      <section class="serpent-spot" id="serpent">
-        <div class="ss-media" data-reveal><img src="img/config/gold-base.webp" alt="The LILITH serpent in yellow gold, coiled three times" loading="lazy" /></div>
-        <div class="ss-copy">
-          <span class="mark" data-reveal>The Signature</span>
-          <h2 class="kinetic" data-reveal style="--d:.05s">The <em>Ouroboros</em></h2>
-          <p class="ss-lede" data-reveal style="--d:.12s">One serpent, coiled three times, swallowing its own beginning. Worn for rebirth, for protection, for the part of yourself you were told to hide. Cast in solid metal, alive in the light.</p>
-          <a class="link-quiet ss-cta" data-link href="#collection" data-reveal style="--d:.18s">Discover the collection</a>
+      <!-- ★ THREE SERPENTS — videos framed for scroll-scrub, sold immediately -->
+      <section class="serpents" id="serpents">
+        <div class="serpents-head" data-reveal>
+          <span class="mark">The Collection</span>
+          <h2>Three Serpents</h2>
+          <p class="serpents-sub">Scroll, and each one wakes — eyes set, jaw open.</p>
+        </div>
+        <div class="serpents-row">
+          <article class="serpent-film" data-metal="gold" data-buy="gold" data-reveal>
+            <div class="sf-canvas-wrap"><canvas></canvas><span class="serpent-idx">i</span></div>
+            <div class="sf-info"><h3>Yellow Gold</h3><p class="gem">18k · Ruby</p><p class="price">from $6,000</p><button class="btn btn-primary" data-buy="gold"><span>Reserve</span></button></div>
+          </article>
+          <article class="serpent-film" data-metal="rose" data-buy="rose" data-reveal style="--d:.08s">
+            <div class="sf-canvas-wrap"><canvas></canvas><span class="serpent-idx">ii</span></div>
+            <div class="sf-info"><h3>Rose Gold</h3><p class="gem">18k · Onyx</p><p class="price">from $7,000</p><button class="btn btn-primary" data-buy="rose"><span>Reserve</span></button></div>
+          </article>
+          <article class="serpent-film" data-metal="platinum" data-buy="platinum" data-reveal style="--d:.16s">
+            <div class="sf-canvas-wrap"><canvas></canvas><span class="serpent-idx">iii</span></div>
+            <div class="sf-info"><h3>Platinum</h3><p class="gem">950 · Emerald</p><p class="price">from $8,500</p><button class="btn btn-primary" data-buy="platinum"><span>Reserve</span></button></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- COMPOSE — the configurator gateway -->
+      <section class="bespoke" id="compose">
+        <span class="mark" data-reveal>Made to order</span>
+        <h2 class="kinetic" data-reveal style="--d:.05s">Compose your<br /><em>serpent.</em></h2>
+        <p class="lede" data-reveal style="--d:.12s">Choose the metal, the gaze, the open or closed mouth. We cast it the moment you reserve — for you, and no one else.</p>
+        <button class="btn btn-primary" data-reveal style="--d:.18s" data-buy="gold"><span>Open the configurator</span></button>
+      </section>
+
+      <!-- ★ THE SERPENT EAR CUFF — inline configurator (image is the configurator) -->
+      <section class="earcuff" id="adornments">
+        <div class="earcuff-head" data-reveal>
+          <span class="mark">New · The Adornments</span>
+          <h2>The Serpent <em>Ear Cuff</em></h2>
+        </div>
+        <div class="earcuff-stage" data-reveal style="--d:.08s">
+          <div class="earcuff-frame">
+            <img id="earcuffImg" src="img/earring-gold.jpg" alt="LILITH serpent ear cuff worn on the ear" />
+          </div>
+          <div class="earcuff-controls">
+            <div class="ec-meta"><h3 id="earcuffName">Yellow Gold</h3><p class="gem" id="earcuffGem">18k · Ruby eyes</p></div>
+            <div class="earcuff-swatches" id="earcuffSwatches">
+              <button data-ec="gold" class="ec-sw on" style="--sw:#d8a979" aria-label="Yellow Gold"><i></i></button>
+              <button data-ec="rose" class="ec-sw" style="--sw:#e7b9a3" aria-label="Rose Gold"><i></i></button>
+              <button data-ec="platinum" class="ec-sw" style="--sw:#cdd2d6" aria-label="Platinum"><i></i></button>
+            </div>
+            <p class="price" id="earcuffPrice">from $2,400</p>
+            <button class="btn btn-primary" id="earcuffBuy"><span>Reserve</span></button>
+          </div>
         </div>
       </section>
 
@@ -126,10 +179,10 @@
           <p class="lede" data-reveal style="--d:.1s">Solid gold and platinum, coiled by a single hand. No two are alike.</p>
           <div class="cta-row" data-reveal style="--d:.18s">
             <button class="btn btn-primary" data-buy="gold"><span>Compose yours</span></button>
-            <a class="link-quiet" data-link href="#collection">The collection</a>
+            <a class="link-quiet" data-link href="#serpents">The collection</a>
           </div>
         </div>
-        <div class="sp-media" data-reveal style="--d:.08s"><img src="img/config/rose-base.webp" alt="Rose gold serpent ring" loading="lazy" /></div>
+        <div class="sp-media" data-reveal style="--d:.08s"><img src="img/worn-rose.jpg" alt="Rose gold serpent ring worn on the hand" loading="lazy" /></div>
       </section>
 
       <!-- RIBBON -->
@@ -172,40 +225,6 @@
         </ol>
       </section>
 
-      <!-- COLLECTION -->
-      <section class="collection" id="collection">
-        <div class="collection-head">
-          <span class="mark" data-reveal>The Collection</span>
-          <h2 class="kinetic" data-reveal>Three Serpents</h2>
-        </div>
-
-        <article class="serpent" data-reveal data-buy="gold">
-          <div class="serpent-media"><img src="img/config/gold-eyes.webp" alt="Yellow gold serpent ring with ruby eyes coiled three times" loading="lazy" /><span class="serpent-idx">i</span></div>
-          <div class="serpent-info">
-            <h3>Yellow Gold</h3>
-            <p class="gem">18k · Ruby gaze</p>
-            <div class="row"><span class="price">from $6,000</span><span class="configure">Configure</span></div>
-          </div>
-        </article>
-
-        <article class="serpent" data-reveal data-buy="rose">
-          <div class="serpent-media"><img src="img/config/rose-eyes.webp" alt="Rose gold serpent ring with black onyx eyes coiled three times" loading="lazy" /><span class="serpent-idx">ii</span></div>
-          <div class="serpent-info">
-            <h3>Rose Gold</h3>
-            <p class="gem">18k · Onyx gaze</p>
-            <div class="row"><span class="price">from $7,000</span><span class="configure">Configure</span></div>
-          </div>
-        </article>
-
-        <article class="serpent" data-reveal data-buy="platinum">
-          <div class="serpent-media"><img src="img/config/platinum-eyes.webp" alt="Platinum serpent ring with emerald eyes coiled three times" loading="lazy" /><span class="serpent-idx">iii</span></div>
-          <div class="serpent-info">
-            <h3>Platinum</h3>
-            <p class="gem">950 · Emerald gaze</p>
-            <div class="row"><span class="price">from $8,500</span><span class="configure">Configure</span></div>
-          </div>
-        </article>
-      </section>
 
       <!-- SIGNATURE -->
       <section class="signature" id="signature">
@@ -229,28 +248,25 @@
       <section class="stones" id="stones">
         <div class="stones-head">
           <h2 class="kinetic" data-reveal>Three stones,<br />three temperaments</h2>
+          <p class="lede" data-reveal style="--d:.1s">The serpent's gaze is set with a matched pair of natural cabochons, 1.5–2.5&nbsp;mm each (about 0.02–0.06&nbsp;ct), placed by hand. Larger eyes to order.</p>
         </div>
         <div class="stone-row">
           <div class="stone" data-reveal>
             <span class="stone-disc" style="--c1:#d0334a;--c2:#6e1020"></span>
             <div class="stone-txt"><h3>Ruby</h3><p class="for">Yellow Gold</p></div>
+            <p>Natural pigeon-blood ruby, round cabochon. Mohs 9, the hardest of the three and made for daily wear. ~2&nbsp;mm pair, ≈0.04&nbsp;ct.</p>
           </div>
           <div class="stone" data-reveal style="--d:.07s">
             <span class="stone-disc" style="--c1:#3c3c43;--c2:#0a0a0c"></span>
             <div class="stone-txt"><h3>Black Onyx</h3><p class="for">Rose Gold</p></div>
+            <p>Jet-black onyx, opaque polished cabochon. Mohs 6.5–7. ~2&nbsp;mm pair, ≈0.05&nbsp;ct. A quiet, depthless gaze.</p>
           </div>
           <div class="stone" data-reveal style="--d:.14s">
             <span class="stone-disc" style="--c1:#1fae74;--c2:#0a523a"></span>
             <div class="stone-txt"><h3>Emerald</h3><p class="for">Platinum</p></div>
+            <p>Colombian emerald, vivid green cabochon. Mohs 7.5–8, naturally included, each one unique. ~2&nbsp;mm pair, ≈0.03&nbsp;ct.</p>
           </div>
         </div>
-      </section>
-
-      <!-- BESPOKE -->
-      <section class="bespoke">
-        <h2 class="kinetic" data-reveal>Your serpent does<br />not yet <em>exist.</em></h2>
-        <p class="lede" data-reveal style="--d:.08s">We cast it the moment you reserve. For you, and no one else.</p>
-        <button class="btn btn-primary" data-reveal style="--d:.16s" data-buy="gold"><span>Compose yours</span></button>
       </section>
 
       <!-- SERVICES & APPOINTMENT -->
@@ -535,10 +551,14 @@
   <script src="vendor/lenis.min.js"></script>
   <script src="home.js?v=20"></script>
   <script src="configurator.js?v=24"></script>
-  <script src="preorder.js?v=24"></script>
+  <script src="preorder.js?v=30"></script>
   <script src="checkout.js?v=20"></script>
-  <script src="menu.js?v=22"></script>
+  <script src="menu.js?v=28"></script>
   <script src="fx.js?v=20"></script>
   <script src="award.js?v=20"></script>
+  <script src="vid.js?v=25"></script>
+  <script src="collbg.js?v=25"></script>
+  <script src="scrubfilm.js?v=30"></script>
+  <script src="earcuff.js?v=29"></script>
 </body>
 </html>

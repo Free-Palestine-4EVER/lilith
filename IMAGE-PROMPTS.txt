@@ -192,18 +192,22 @@ Save as: worn-gold-1.jpg / worn-rose-1.jpg / worn-plat-1.jpg in site/img/
 
 
 ============================================================
-SEEDANCE — 3 SEPARATE ROTATING VIDEOS (one per metal, 1:1 loop)
-Run 3 times, attaching each variation's 1:1 photo. These become
-the scroll-changing collection videos.
+SEEDANCE — 3 "AWAKENING" VIDEOS (one per metal, 1:1)
+The serpent transforms through the 3 configurator states:
+  (1) closed mouth, NO eyes  →  (2) gemstone eyes set  →  (3) eyes + mouth OPEN
+Attach that metal's THREE renders (base, eyes, open) as keyframes, in order.
 ============================================================
-TEMPLATE (attach that metal's photo):
-Using the attached photo of the [METAL] serpent ring, create a continuous square
-1:1 video loop: the ring stays locked dead-center and slowly rotates a full 360
-degrees, always tack-sharp, holding its exact shape, its [METAL] color and [GEM]
-eyes unchanged. Soft studio key light, slow specular highlights rolling across the
-hammered facets, [BG] gradient background, shallow depth of field, premium dreamlike
-jewelry commercial, 8k, fine film grain, seamless loop, no text, no logos, no hands,
-no people.
+TEMPLATE (attach the metal's 3 renders, in order: base / eyes / open):
+Using the three attached photos of the SAME [METAL] serpent ring — (1) plain with a
+closed mouth and no eyes, (2) with [GEM] eyes set, (3) with [GEM] eyes and its mouth
+open — create ONE continuous square 1:1 video. The ring stays locked dead-center and
+slowly rotates, tack-sharp, the same [METAL] throughout. It AWAKENS in three seamless
+stages with no hard cuts: first the bare [METAL] serpent, closed mouth, empty eyes;
+then two [GEM] gemstones slowly ignite and set into its eyes, catching the light; then
+its jaw slowly opens into the agape pose, eyes glowing. Smooth gradual transformation,
+soft studio key light, slow specular highlights on the hammered facets, [BG] gradient
+background, shallow depth of field, premium dreamlike commercial, 8k, film grain.
+Centered, no text, no logos, no hands, no people.
 
 FILL PER VIDEO:
 • GOLD     — [METAL]=warm 18k yellow gold · [GEM]=deep-red ruby   · [BG]=warm champagne
@@ -211,4 +215,9 @@ FILL PER VIDEO:
 • PLATINUM — [METAL]=cool silver platinum  · [GEM]=emerald-green    · [BG]=cool silver-grey
 
 → Save as site/video/gold.mp4, video/rose.mp4, video/platinum.mp4
-  I'll wire the collection so the ring video swaps/scrubs as you scroll.
+
+IF IT COMES OUT AS HARD CUTS (Seedance struggles to morph 3 product photos in one
+gen — see snake.md): make TWO short clips per metal instead, (A) base→eyes and
+(B) eyes→open, and I'll crossfade them. OR skip video entirely — I can animate the
+base→eyes→open "awakening" IN-BROWSER from the 3 stills you already have (smooth
+dissolve on scroll/hover), crisp and instant, no generation needed.

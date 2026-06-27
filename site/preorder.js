@@ -41,16 +41,41 @@
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('Enter a valid email address.', 'poEmail');
     $('poErr').textContent = '';
     const b = $('poSubmit'); b.classList.add('loading'); b.disabled = true;
-    setTimeout(()=>succeed(first, email), 1600);
+    const order = 'LIL-' + String(Math.floor(1000 + Math.random()*9000));
+    // email the reservation to the atelier (Resend, via /api/reserve)
+    fetch('/api/reserve', {
+      method:'POST', headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        kind:'Preorder reservation', product: current.title, summary: current.summary,
+        price: 'from ' + (current.priceText || ('$'+current.price)),
+        first, last: $('poLast').value.trim(), email, phone: $('poPhone').value.trim(),
+        size: $('poSize').value.trim(), country: $('poCountry').value, engraving: $('poEngrave').value.trim(),
+        order
+      })
+    }).catch(()=>{});
+    setTimeout(()=>succeed(first, email, order), 1600);
   });
   function fail(msg, focus){ $('poErr').textContent = msg; const el=$(focus); if(el) el.focus(); }
 
-  function succeed(first, email){
-    $('poNo').textContent = 'LIL-' + String(Math.floor(1000 + Math.random()*9000));
+  function succeed(first, email, order){
+    $('poNo').textContent = order;
     $('poDoneTitle').textContent = 'Your ' + current.title;
     $('poDoneName').textContent = first;
     $('poDoneEmail').textContent = email;
     po.classList.add('done');
   }
   $('poDoneClose').addEventListener('click', ()=> close(true));
+
+  /* generic preorder triggers for non-ring products (earrings, nose pin) */
+  document.querySelectorAll('[data-preorder]').forEach(b=>{
+    b.addEventListener('click', e=>{
+      e.preventDefault();
+      window.openPreorder({
+        title: b.dataset.title || 'LILITH piece',
+        summary: b.dataset.summary || '',
+        price: +(b.dataset.price || 0),
+        img: b.dataset.img || 'img/config/gold-eyes.webp'
+      });
+    });
+  });
 })();
