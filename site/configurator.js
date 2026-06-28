@@ -10,17 +10,30 @@
   };
   const state = { metal:'gold', eyes:false, open:false };
   const $ = id => document.getElementById(id);
-  const cfg = $('config'), img = $('cfgImg');
+  const cfg = $('config'), imgA = $('cfgImg'), imgB = $('cfgImgB');
+  let curImg = imgA;
   const money = n => '$' + n.toLocaleString('en-US');
   const variant = () => state.open ? 'open' : state.eyes ? 'eyes' : 'base';
   const price   = () => METALS[state.metal].base + (state.eyes ? METALS[state.metal].eyes : 0);
 
+  /* Crossfade between two stacked layers: the new image fades in ON TOP of the
+     current one, which stays opaque underneath — so the stage background is
+     never exposed mid-swap (that was the gray/dark flash). */
   function setImg(){
     const src = `img/config/${state.metal}-${variant()}.webp`;
-    if (img.getAttribute('src') === src) return;
-    img.classList.add('swap');
+    if (curImg.getAttribute('src') === src) return;
+    const next = (curImg === imgA) ? imgB : imgA;
     const pre = new Image();
-    pre.onload = () => { img.src = src; requestAnimationFrame(()=>img.classList.remove('swap')); };
+    pre.onload = () => {
+      next.src = src;
+      next.style.zIndex = '2';
+      curImg.style.zIndex = '1';
+      void next.offsetWidth;                 // reflow so opacity animates from 0
+      next.style.opacity = '1';
+      const prev = curImg;
+      curImg = next;
+      setTimeout(() => { if (curImg !== prev) prev.style.opacity = '0'; }, 500);
+    };
     pre.src = src;
   }
 
@@ -82,7 +95,7 @@
     const order = {
       metal:state.metal, title:`${m.name} Serpent`, purity:m.purity, gem:m.gem,
       eyes:state.eyes, open:state.open, summary, price:price(), priceText:money(price()),
-      img:img.getAttribute('src')
+      img:curImg.getAttribute('src')
     };
     if (window.openPreorder){ window.openPreorder(order); return; }
     /* fallback confirmation if checkout is unavailable */

@@ -7,8 +7,9 @@
 #cfgClose:hover{background:var(--blood);border-color:var(--blood);color:#fff;transform:rotate(90deg)}
 
 .cfg-stage{position:relative;flex:0 0 44vh;overflow:hidden;background:radial-gradient(120% 110% at 50% 30%,var(--ink-2),#0b0807)}
-#cfgImg{width:100%;height:100%;object-fit:cover;transition:opacity .4s ease}
-#cfgImg.swap{opacity:0}
+.cfg-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s ease}
+#cfgImg{opacity:1;z-index:2}
+#cfgImgB{opacity:0;z-index:1}
 .cfg-vignette{position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,var(--ink),transparent);pointer-events:none}
 .cfg-stage-label{position:absolute;left:18px;top:16px;z-index:3;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--text);display:flex;align-items:center;gap:9px;opacity:.85}
 .cfg-stage-label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blood-2);box-shadow:0 0 0 3px color-mix(in oklab,var(--blood) 30%,transparent);animation:cfgpulse 2.4s ease-in-out infinite}
