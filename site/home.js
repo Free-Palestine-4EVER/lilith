@@ -1,6 +1,22 @@
 /* ============================================================
    LILITH — home (hero film + serpent spine + reveals)
    ============================================================ */
+/* Freeze 1vh to a fixed pixel value (--vhu) so the tall scroll-tracks
+   (#hero = 440-560vh, #loader) don't resize when the mobile address bar
+   shows/hides. That toggle fires on every scroll-direction reversal and,
+   multiplied by 440, would shove the whole page ~260px ("scroll a little,
+   page moves a lot"). Only re-freeze on a width change (orientation),
+   never on an address-bar height change. */
+(function(){
+  const el = document.documentElement;
+  let lastW = window.innerWidth;
+  const setVhu = () => el.style.setProperty('--vhu', (window.innerHeight / 100) + 'px');
+  setVhu();
+  window.addEventListener('resize', () => {
+    if(window.innerWidth !== lastW){ lastW = window.innerWidth; setVhu(); }
+  });
+})();
+
 /* Smooth-scroll on pointer devices only. On touch (phones/tablets) native
    scrolling is used — Lenis momentum amplifies small direction reversals,
    making the page jump when you flick back the other way. */

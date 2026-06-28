@@ -2,6 +2,18 @@
    LILITH — loader page (rose serpent, frame-on-scroll)
    Enter the Maison → home.html
    ============================================================ */
+/* Freeze 1vh to px (--vhu) so #loader (260-300vh) doesn't resize on the mobile
+   address-bar toggle. Re-freeze only on width change. See home.js for the why. */
+(function(){
+  const el = document.documentElement;
+  let lastW = window.innerWidth;
+  const setVhu = () => el.style.setProperty('--vhu', (window.innerHeight / 100) + 'px');
+  setVhu();
+  window.addEventListener('resize', () => {
+    if(window.innerWidth !== lastW){ lastW = window.innerWidth; setVhu(); }
+  });
+})();
+
 /* Smooth-scroll on pointer devices only; native scroll on touch (see home.js). */
 if(!matchMedia('(hover: none) and (pointer: coarse)').matches){
   const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
