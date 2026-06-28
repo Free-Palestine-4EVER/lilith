@@ -2,8 +2,11 @@
    LILITH — loader page (rose serpent, frame-on-scroll)
    Enter the Maison → home.html
    ============================================================ */
-const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })();
+/* Smooth-scroll on pointer devices only; native scroll on touch (see home.js). */
+if(!matchMedia('(hover: none) and (pointer: coarse)').matches){
+  const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })();
+}
 
 const body = document.body;
 const byId = id => document.getElementById(id);

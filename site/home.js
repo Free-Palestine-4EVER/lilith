@@ -1,9 +1,15 @@
 /* ============================================================
    LILITH — home (hero film + serpent spine + reveals)
    ============================================================ */
-const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-window.lenis = lenis;
-(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })();
+/* Smooth-scroll on pointer devices only. On touch (phones/tablets) native
+   scrolling is used — Lenis momentum amplifies small direction reversals,
+   making the page jump when you flick back the other way. */
+let lenis = null;
+if(!matchMedia('(hover: none) and (pointer: coarse)').matches){
+  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  window.lenis = lenis;
+  (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })();
+}
 
 const body = document.body;
 const byId = id => document.getElementById(id);
