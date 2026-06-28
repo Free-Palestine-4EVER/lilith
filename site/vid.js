@@ -6,6 +6,6 @@
     const v=e.target;
     if(e.isIntersecting){ if(v.preload==='none'){ v.preload='auto'; v.load(); } v.play().catch(()=>{}); }
     else v.pause();
-  },{threshold:0.2});
+  }),{threshold:0.2});
   vids.forEach(v=>io.observe(v));
 })();
