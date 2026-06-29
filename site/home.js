@@ -51,6 +51,7 @@ let cur=-1, render=0;
 const loadFill = byId('loadFill');
 const heroSec = byId('hero');
 const caps = document.querySelectorAll('.hero-cap');
+const loaderBrand = document.querySelector('.loader-brand');
 let unlocked = false;
 
 function cover(c,cx,img){
@@ -87,6 +88,13 @@ function tick(){
   const lt=pl*(N-1); lRender+=(lt-lRender)*0.2; if(Math.abs(lt-lRender)<0.01) lRender=lt; drawL(Math.round(lRender));
   /* cross-fade the rose film out over the last stretch of its scroll */
   loaderStage.style.opacity = (1 - smooth(0.62, 1.0, pl)).toFixed(3);
+  /* LILITH MAISON title blooms the instant the serpent's jaw opens (~pl .66), then dissolves into the Maison */
+  if(loaderBrand){
+    const bo = smooth(0.64, 0.80, pl) * (1 - smooth(0.93, 1.0, pl));
+    loaderBrand.style.opacity = bo.toFixed(3);
+    const rise = (1 - smooth(0.60, 0.84, pl)) * 26;
+    loaderBrand.style.transform = `translateY(${rise.toFixed(1)}px)`;
+  }
 
   /* film 2 — hero. Hold on frame 0 through the overlap, then scrub. */
   const hr=heroSec.getBoundingClientRect();

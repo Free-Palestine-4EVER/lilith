@@ -5,7 +5,7 @@
 (function(){
   const films = [...document.querySelectorAll('.serpent-film')];
   if(!films.length) return;
-  const N = 40;
+  const N = 56;
   const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   films.forEach(film=>{
@@ -33,7 +33,7 @@
     for(let i=0;i<N;i++){
       const im = new Image(); imgs[i]=im;
       im.onload = ()=>{ if(i===0) size(); };
-      im.src = `serpents/${metal}/f_${String(i+1).padStart(2,"0")}.webp?v=30`;
+      im.src = `serpents/${metal}/f_${String(i+1).padStart(2,"0")}.webp?v=40`;
     }
     film._tick = ()=>{
       const r = cv.getBoundingClientRect();
