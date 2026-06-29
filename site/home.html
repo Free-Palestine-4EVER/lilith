@@ -31,7 +31,7 @@
 <link rel="preload" href="fonts/melodrama-500.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="fonts/supreme-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="fonts.css?v=20" />
-<link rel="stylesheet" href="styles.css?v=37" />
+<link rel="stylesheet" href="styles.css?v=39" />
 <link rel="stylesheet" href="config.css?v=38" />
 <link rel="stylesheet" href="preorder.css?v=33" />
 <link rel="stylesheet" href="checkout.css?v=20" />
@@ -101,7 +101,16 @@
     </div>
   </nav>
 
-  <!-- HERO · frame-on-scroll film -->
+  <!-- LOADER FILM · 1st section · rose serpent, frame-on-scroll -->
+  <section id="loader">
+    <div class="loader-stage">
+      <canvas id="loaderCanvas"></canvas>
+      <div class="loader-veil" aria-hidden="true"></div>
+      <div class="loader-hint"><span>Scroll to wake the serpent</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- HERO FILM · 2nd section · frame-on-scroll -->
   <section id="hero">
     <div class="hero-stage">
       <canvas id="frames"></canvas>
@@ -587,7 +596,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
   <script src="firebase-init.js?v=33"></script>
-  <script src="home.js?v=37"></script>
+  <script src="home.js?v=39"></script>
   <script src="configurator.js?v=38"></script>
   <script src="preorder.js?v=33"></script>
   <script src="checkout.js?v=20"></script>

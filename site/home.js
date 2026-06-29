@@ -33,29 +33,42 @@ const clamp = v => Math.max(0, Math.min(1, v));
 const pad = n => String(n).padStart(3,'0');
 
 const N = 90;
+const smooth = (a,b,x)=>{ const t=clamp((x-a)/(b-a)); return t*t*(3-2*t); };
+
+/* ---- two films stacked: rose loader (top) cross-fades into hero (bottom) ---- */
+const loaderCanvas = byId('loaderCanvas');
+const lctx = loaderCanvas.getContext('2d', { alpha:false });
+const loaderStage = document.querySelector('.loader-stage');
+const loaderSec = byId('loader');
+const lImgs = new Array(N);
+let lCur=-1, lRender=0;
+
 const canvas = byId('frames');
 const ctx = canvas.getContext('2d', { alpha:false });
 const imgs = new Array(N);
+let cur=-1, render=0;
+
 const loadFill = byId('loadFill');
 const heroSec = byId('hero');
 const caps = document.querySelectorAll('.hero-cap');
-let cur = -1, render = 0, unlocked = false;
+let unlocked = false;
 
-function size(){
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width  = Math.round(window.innerWidth  * dpr);
-  canvas.height = Math.round(window.innerHeight * dpr);
-  canvas.style.width  = window.innerWidth  + 'px';
-  canvas.style.height = window.innerHeight + 'px';
-  cur = -1; drawI(Math.round(render));
-}
-function cover(img){
-  const cw=canvas.width, ch=canvas.height, ir=img.width/img.height, cr=cw/ch;
+function cover(c,cx,img){
+  const cw=c.width, ch=c.height, ir=img.width/img.height, cr=cw/ch;
   let dw,dh,dx,dy;
   if(cr>ir){dw=cw;dh=cw/ir;dx=0;dy=(ch-dh)/2;} else {dh=ch;dw=ch*ir;dy=0;dx=(cw-dw)/2;}
-  ctx.drawImage(img,dx,dy,dw,dh);
+  cx.drawImage(img,dx,dy,dw,dh);
 }
-function drawI(i){ i=Math.max(0,Math.min(N-1,i)); if(i===cur)return; const im=imgs[i]; if(im&&im.complete){cur=i;cover(im);} }
+function sizeOne(c){
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  c.width  = Math.round(window.innerWidth  * dpr);
+  c.height = Math.round(window.innerHeight * dpr);
+  c.style.width  = window.innerWidth  + 'px';
+  c.style.height = window.innerHeight + 'px';
+}
+function size(){ sizeOne(loaderCanvas); sizeOne(canvas); lCur=-1; cur=-1; drawL(Math.round(lRender)); drawH(Math.round(render)); }
+function drawL(i){ i=Math.max(0,Math.min(N-1,i)); if(i===lCur)return; const im=lImgs[i]; if(im&&im.complete){lCur=i;cover(loaderCanvas,lctx,im);} }
+function drawH(i){ i=Math.max(0,Math.min(N-1,i)); if(i===cur)return; const im=imgs[i]; if(im&&im.complete){cur=i;cover(canvas,ctx,im);} }
 
 /* serpent spine — draws as #site scrolls past */
 const site = byId('site');
@@ -65,18 +78,32 @@ function setupSpine(){ if(spine){ spineLen = spine.getTotalLength(); spine.style
 
 let pMove=false, capIdx=0, pScrolled=false;
 function tick(){
-  const r=heroSec.getBoundingClientRect();
-  const s=heroSec.offsetHeight-window.innerHeight;
-  const p=s>0?clamp(-r.top/s):0;
-  const t=p*(N-1); render+=(t-render)*0.2; if(Math.abs(t-render)<0.01) render=t; drawI(Math.round(render));
-  const moving=p>0.02; if(moving!==pMove){ body.classList.toggle('moving',moving); pMove=moving; }
-  const ci=p<0.33?0:p<0.56?1:2; if(ci!==capIdx){ caps.forEach((c,k)=>c.classList.toggle('active',k===ci)); capIdx=ci; }
+  const vh=window.innerHeight;
+
+  /* film 1 — rose loader */
+  const lr=loaderSec.getBoundingClientRect();
+  const ls=loaderSec.offsetHeight-vh;
+  const pl=ls>0?clamp(-lr.top/ls):0;
+  const lt=pl*(N-1); lRender+=(lt-lRender)*0.2; if(Math.abs(lt-lRender)<0.01) lRender=lt; drawL(Math.round(lRender));
+  /* cross-fade the rose film out over the last stretch of its scroll */
+  loaderStage.style.opacity = (1 - smooth(0.62, 1.0, pl)).toFixed(3);
+
+  /* film 2 — hero. Hold on frame 0 through the overlap, then scrub. */
+  const hr=heroSec.getBoundingClientRect();
+  const hs=heroSec.offsetHeight-vh;
+  const ph=hs>0?clamp(-hr.top/hs):0;
+  const ovl = hs>0 ? clamp((-parseFloat(getComputedStyle(heroSec).marginTop)||0)/hs) : 0;
+  const phe = clamp((ph-ovl)/(1-ovl));
+  const ht=phe*(N-1); render+=(ht-render)*0.2; if(Math.abs(ht-render)<0.01) render=ht; drawH(Math.round(render));
+
+  const moving=pl>0.02; if(moving!==pMove){ body.classList.toggle('moving',moving); pMove=moving; }
+  const ci=phe<0.33?0:phe<0.56?1:2; if(ci!==capIdx){ caps.forEach((c,k)=>c.classList.toggle('active',k===ci)); capIdx=ci; }
 
   const y=window.scrollY||window.pageYOffset;
   const sc=y>40; if(sc!==pScrolled){ body.classList.toggle('scrolled',sc); pScrolled=sc; }
   if(spineLen && site){
     const sr=site.getBoundingClientRect();
-    const prog=clamp((window.innerHeight - sr.top) / (site.offsetHeight + window.innerHeight*0.4));
+    const prog=clamp((vh - sr.top) / (site.offsetHeight + vh*0.4));
     spine.style.strokeDashoffset = spineLen*(1-prog);
   }
   requestAnimationFrame(tick);
@@ -84,16 +111,24 @@ function tick(){
 requestAnimationFrame(tick);
 window.addEventListener('resize', ()=>{ size(); setupSpine(); });
 
+/* load film 1 (rose) first — gate the splash on it; then stream film 2 (hero) */
 const MIN=700, t0=Date.now(); let done=0;
 function mark(){ done++; if(loadFill) loadFill.style.width=(done/N*100)+'%'; if(done>=N) finish(); }
-function finish(){ if(unlocked)return; unlocked=true; const w=Math.max(0,MIN-(Date.now()-t0)); setTimeout(()=>{ body.classList.remove('loading'); size(); setupSpine(); }, w); }
+function finish(){ if(unlocked)return; unlocked=true; const w=Math.max(0,MIN-(Date.now()-t0)); setTimeout(()=>{ body.classList.remove('loading'); size(); setupSpine(); }, w); loadHero(); }
 for(let i=0;i<N;i++){
-  const img=new Image(); imgs[i]=img;
+  const img=new Image(); lImgs[i]=img;
   img.onload=()=>{ if(i===0) size(); mark(); if(img.decode) img.decode().catch(()=>{}); };
   img.onerror=mark;
-  img.src=`hero/frame_${pad(i)}.webp`;
+  img.src=`frames/frame_${pad(i)}.webp`;
 }
-setTimeout(()=>{ if(!unlocked){ unlocked=true; body.classList.remove('loading'); size(); setupSpine(); } }, 5500);
+function loadHero(){
+  for(let i=0;i<N;i++){
+    const img=new Image(); imgs[i]=img;
+    img.onload=()=>{ if(i===0) drawH(0); if(img.decode) img.decode().catch(()=>{}); };
+    img.src=`hero/frame_${pad(i)}.webp`;
+  }
+}
+setTimeout(()=>{ if(!unlocked){ unlocked=true; body.classList.remove('loading'); size(); setupSpine(); loadHero(); } }, 5500);
 setupSpine();
 
 /* reveal-on-scroll */

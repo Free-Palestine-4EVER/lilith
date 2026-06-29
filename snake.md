@@ -189,4 +189,11 @@ Attach the 3 ring images as references. Single 15s clip, jungle→desert→water
     - Cache **v=22** (styles, menu.js). All verified; no JS errors.
     - **IMAGE PROMPTS**: wrote `~/dev/snake-ring/IMAGE-PROMPTS.txt` (15 model-worn/macro prompts + reference-based metal-swap prompts — user attaches the rose-gold model photo, swaps to gold/platinum). User is generating real model-on-hand photos to drop in `site/img/` → then wire them into the splits/spotlight/collection (replace the -base/-open product renders with model shots).
 
-*(Last updated 2026-06-27.)*
+17. **ONE-PAGE FILM MERGE (2026-06-29).** User: "make the loader just a hero section on the website, the hero video make it 2nd section, smooth transition between the two videos, remove the Enter Maison button." The two-page split (index=loader → Enter → home) is gone:
+    - **Loader film is now the 1st section inside `home.html`** — `<section id="loader">` (rose serpent scrub) added directly above `#hero` (gold→platinum scrub = 2nd section). The big rose `#brand` wordmark dropped (the masthead already shows LILITH); `loader-hint` moved INSIDE `.loader-stage` (absolute) so it scrolls away with the film.
+    - **Smooth cross-fade between the two films:** `#hero` is pulled up `margin-top:calc(var(--vhu)*-80)` so it pins *under* the loader during the overlap; `.loader-stage{z-index above #hero}`. `home.js` now drives BOTH canvases in one rAF `tick()`: scrubs rose, fades `loader-stage` opacity 1→0 via `smooth(0.62,1.0,pl)`, and **holds the hero on frame 0 through the overlap** (`phe = (ph-ovl)/(1-ovl)`, ovl read from hero's computed marginTop) so the gold film starts clean at frame 0 as the rose dissolves out. Verified the dissolve + clean hero handoff in-browser.
+    - Loading: rose frames (`frames/`) load first and gate the `#homeload` splash; hero frames (`hero/`) stream after via `loadHero()` (keeps peak memory ~1 film).
+    - **Enter button removed** — `#enterBtn` deleted; `fx.js` pageFade/magnetic already no-op when it's absent. `loader-page.js` is now unused. **`index.html` is just a redirect to `home.html`** (meta-refresh + `location.replace`).
+    - Cache: home.html → styles.css?v=39, home.js?v=39. RUN unchanged (`:8137`, open `/` → redirects to the one-page site).
+
+*(Last updated 2026-06-29.)*

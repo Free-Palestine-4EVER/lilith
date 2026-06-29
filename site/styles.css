@@ -40,9 +40,11 @@ em{font-style:italic}
 /* ============================================================
    LOADER PAGE (index.html) — rose film, obsidian framing
    ============================================================ */
-#loader{position:relative;height:calc(var(--vhu,1vh) * 300);background:var(--loader-bg)}
-.loader-stage{position:sticky;top:0;height:100svh;height:100dvh;width:100%;overflow:hidden;background:var(--loader-bg)}
+#loader{position:relative;z-index:2;height:calc(var(--vhu,1vh) * 300);background:var(--loader-bg)}
+.loader-stage{position:sticky;top:0;height:100svh;height:100dvh;width:100%;overflow:hidden;background:var(--loader-bg);will-change:opacity}
 #loaderCanvas{display:block;width:100%;height:100%;transform:translateZ(0)}
+/* loader-hint now lives inside the stage so it scrolls away with the rose film */
+.loader-stage .loader-hint{position:absolute;color:#3a1812}
 /* cinematic vignette — gentle up top (let the rose film shine), darker at the foot for the cue/button */
 .loader-veil{position:absolute;inset:0;z-index:2;pointer-events:none;
   background:
@@ -98,7 +100,8 @@ body.scrolled #mast::before{opacity:1}
 /* ============================================================
    HERO film
    ============================================================ */
-#hero{position:relative;height:calc(var(--vhu,1vh) * 560);background:var(--ink)}
+/* pulled up 80vh so the rose film can cross-fade into the hero film over the overlap */
+#hero{position:relative;z-index:1;height:calc(var(--vhu,1vh) * 560);margin-top:calc(var(--vhu,1vh) * -80);background:var(--ink)}
 .hero-stage{position:sticky;top:0;height:100svh;height:100dvh;width:100%;overflow:hidden;background:var(--ink)}
 #frames{display:block;width:100%;height:100%;transform:translateZ(0);will-change:transform;backface-visibility:hidden;font-size:16px}
 .hero-vignette{position:absolute;inset:0;pointer-events:none;background:
